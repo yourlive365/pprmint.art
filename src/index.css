@@ -1,0 +1,210 @@
+html,
+body {
+  min-height: 100%;
+  background-color: #0a0a0a;
+}
+
+@keyframes fadeTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes cardImage {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes underlineDraw {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 100px;
+    opacity: 1;
+  }
+}
+@keyframes splash {
+  from {
+    transform: scale(1) rotate(-10deg);
+  }
+  to {
+    transform: scale(1.1) rotate(-10deg);
+  }
+}
+
+#left {
+  float: left;
+}
+#right {
+  float: right;
+}
+#navlinks {
+  float: right;
+  margin: none;
+  text-decoration: none !important;
+  margin: 11px 0;
+}
+#navlink {
+  padding: 22px 12px;
+}
+
+#wrapper {
+  min-height: calc(100vh - 60px);
+}
+
+#content {
+  opacity: 0;
+  animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.15s forwards;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ebebeb;
+}
+h1,
+h2 {
+  font-family: "DM Serif Display", "DM Sans", "Roboto", Helvetica, Arial,
+    sans-serif !important;
+  opacity: 0;
+  animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  hyphens: auto;
+}
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  position: relative;
+  background: #3dd17f;
+  width: 0px;
+  height: 7px;
+  top: 10px;
+  margin: 0 auto;
+  animation: underlineDraw 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Text", "DM Sans", "Roboto", Helvetica, Arial,
+    sans-serif !important;
+}
+
+p {
+  color: #b3b3b3;
+}
+a {
+  text-decoration: none !important;
+  outline: none;
+}
+p a {
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+  transition: 0.2s;
+}
+p a:hover {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.MuiListItemIcon-root {
+  font-size: 20px;
+}
+
+#content {
+  padding-bottom: 50px;
+}
+
+iframe {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.cardImage {
+  height: 163px;
+}
+
+.MuiCard-root#primary {
+  padding: 10px;
+  border: 1px solid #ffffff00;
+  transition: 0.15s ease-out;
+  cursor: pointer;
+}
+.MuiCard-root#primary:hover {
+  border: 1px solid #ffffff11;
+  background-color: #151515;
+  transform: translateY(-5px);
+}
+
+.MuiPaper-rounded {
+  border-radius: 8px !important;
+}
+
+button#primary::before {
+  content: "-";
+  font-weight: bolder;
+  width: 0px;
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+button#primary:hover::before {
+  width: 18px;
+  transform: scaleX(1);
+}
+
+footer {
+  background-color: #121212;
+  padding: 20px 20px 15px 20px;
+  height: 60px;
+}
+
+#footerlinks {
+  float: right;
+}
+#footerlinks a {
+  color: #b3b3b3;
+  margin-left: 20px;
+}
+#footerlinks a#first {
+  color: #b3b3b3;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 440px) {
+  footer img {
+    display: none;
+  }
+  #footerlinks a {
+    color: #b3b3b3;
+    margin-left: 20px;
+  }
+}

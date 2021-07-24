@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1078 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.25874,0,0,1.25874,-658.07,-138.462)">
+        <text x="931.4px" y="162px" style="font-family:'MintAlternativeRegular', 'MintAlternative';font-weight:700;font-size:65px;fill:rgb(235,235,235);">N</text>
+    </g>
+    <g transform="matrix(1.25874,0,0,1.25874,-658.07,876.084)">
+        <text x="934px" y="162px" style="font-family:'MintAlternativeRegular', 'MintAlternative';font-weight:700;font-size:65px;fill:rgb(235,235,235);">S</text>
+    </g>
+    <g transform="matrix(1.25874,0,0,1.25874,-147.021,365.035)">
+        <text x="936.6px" y="162px" style="font-family:'MintAlternativeRegular', 'MintAlternative';font-weight:700;font-size:65px;fill:rgb(235,235,235);">E</text>
+    </g>
+    <g transform="matrix(1.25874,0,0,1.25874,-1169.12,365.035)">
+        <text x="928.8px" y="162px" style="font-family:'MintAlternativeRegular', 'MintAlternative';font-weight:700;font-size:65px;fill:rgb(235,235,235);">W</text>
+    </g>
+    <g transform="matrix(1.25874,0,0,1.25874,-664.615,-143.497)">
+        <path d="M890,540L635,540L960,470L960,540L1285,540L960,610L960,865L890,540Z" style="fill:rgb(235,235,235);fill-opacity:0.25;"/>
+    </g>
+    <g transform="matrix(0.968263,0,0,1.25874,-473.868,-143.497)">
+        <path d="M1051,215L1051,540L960,540L1051,215Z" style="fill:rgb(230,56,70);"/>
+    </g>
+    <g transform="matrix(-0.968263,0,0,1.25874,1561.42,-143.497)">
+        <path d="M1051,215L1051,540L960,540L1051,215Z" style="fill:rgb(230,56,70);fill-opacity:0.25;"/>
+    </g>
+    <g transform="matrix(1.25874,0,0,1.25874,-664.615,-143.497)">
+        <path d="M960,540L960,470L1285,540L1030,540L960,865L960,610L635,540L960,540Z" style="fill:rgb(235,235,235);"/>
+    </g>
+</svg>
