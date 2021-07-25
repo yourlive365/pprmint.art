@@ -15,18 +15,20 @@ import Image from "material-ui-image";
 
 import {
   RiAddLine,
-  RiSkipForwardLine,
-  RiHammerLine,
-  RiRefreshLine,
+  RiPaintFill,
   RiDownload2Line,
+  RiInstallLine,
+  RiFileTextLine,
+  RiContrastLine,
+  RiGithubLine,
 } from "react-icons/ri";
 
 import TitleScreen from "./images/title.png";
-import OptionsScreen from "./images/options_controls.png";
+import OptionsScreen from "./images/options.png";
 import SurvivalInventory from "./images/survival_inventory.png";
-import SurvivalFurnace from "./images/survival_furnace.png";
-import CreativeInventory from "./images/creative_inventory.png";
+import SurvivalUnderwater from "./images/survival_underwater.png";
 import CreativeSearch from "./images/creative_search.png";
+import Beacon from "./images/beacon.png";
 
 function MintCraftDL() {
   return (
@@ -36,56 +38,105 @@ function MintCraftDL() {
         <title>pprmint.de – Mintcraft.</title>
         <meta
           name="description"
-          content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking."
+          content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking. Craft."
         />
       </Helmet>
+      <img
+        src="/assets/blobs/mintcraft_header_blob.svg"
+        style={{
+          position: "absolute",
+          animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards",
+          opacity: "0",
+        }}
+      />
       <Typography variant="h1" align="center">
         Mint&#173;craft.
-        {/* <span style={{ position: "absolute", color: "#f9c80e", fontFamily: "DM Sans", fontWeight: "bold", fontSize: "30px", transform: "rotate(-10deg)", animation: "splash .25s ease-out infinite alternate" }}>
-          This is Sample Text.
-        </span> */}
       </Typography>
 
       <Container id="wrapper">
         <div id="content">
-          <Typography variant="h4">Changes in version 1.01</Typography>
+          <Typography variant="h4">Changes in version 1.2</Typography>
           <List>
             <ListItem>
               <ListItemIcon>
                 <RiAddLine />
               </ListItemIcon>
               <ListItemText>
-                Added some more splash texts. Because that’s barely even worth
-                an entire new version, here are the changes for the previous
-                version as well.
+                Now supports version 1.17 and above. I hope.
               </ListItemText>
             </ListItem>
-          </List>
-          <br />
-          <Typography variant="h5">Changes in version 1.0</Typography>
-          <List>
             <ListItem>
               <ListItemIcon>
-                <RiSkipForwardLine />
+                <RiPaintFill />
               </ListItemIcon>
               <ListItemText>
-                Skipped 0.8 and 0.9 in favor of just not caring about whether
-                this thing is even ““““““finalized”””””.
+                Changed design of buttons, containers and icons.
               </ListItemText>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <RiRefreshLine />
+                <RiFileTextLine />
               </ListItemIcon>
               <ListItemText>
-                Replaced title screen logo with a debatably superior one.
+                Added even more splash texts and exclamation marks, featuring
+                quotes from{" "}
+                <a
+                  href="https://twitter.com/Gamer_Kold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Kold
+                </a>
+                ,{" "}
+                <a
+                  href="https://twitter.com/ScreamRepeat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ScreamRepeat
+                </a>
+                ,{" "}
+                <a
+                  href="https://twitter.com/notkoutsie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Koutsie
+                </a>
+                ,{" "}
+                <a
+                  href="https://twitter.com/Voluna_Awoo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Voluna
+                </a>
+                ,{" "}
+                <a
+                  href="https://twitter.com/TaromaruYuki"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Taromaru
+                </a>
+                ,{" "}
+                <a
+                  href="https://twitter.com/emplexx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Emplexx
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://twitter.com/foxylucklol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  FoxyLuck
+                </a>
+                !
               </ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <RiHammerLine />
-              </ListItemIcon>
-              <ListItemText>Some small fixes here and there.</ListItemText>
             </ListItem>
           </List>
           <br />
@@ -185,30 +236,14 @@ function MintCraftDL() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <a
-                href={SurvivalFurnace}
+                href={SurvivalUnderwater}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
-                  src={SurvivalFurnace}
+                  src={SurvivalUnderwater}
                   width="100%"
                   alt="Survival furnace window."
-                  imageStyle={{ borderRadius: "8px" }}
-                  aspectRatio={16 / 9}
-                  color="transparent"
-                />
-              </a>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <a
-                href={CreativeInventory}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={CreativeInventory}
-                  width="100%"
-                  alt="Creative inventory."
                   imageStyle={{ borderRadius: "8px" }}
                   aspectRatio={16 / 9}
                   color="transparent"
@@ -224,6 +259,18 @@ function MintCraftDL() {
                 <Image
                   src={CreativeSearch}
                   width="100%"
+                  alt="Creative inventory."
+                  imageStyle={{ borderRadius: "8px" }}
+                  aspectRatio={16 / 9}
+                  color="transparent"
+                />
+              </a>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <a href={Beacon} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={Beacon}
+                  width="100%"
                   alt="Creative inventory search."
                   imageStyle={{ borderRadius: "8px" }}
                   aspectRatio={16 / 9}
@@ -233,51 +280,69 @@ function MintCraftDL() {
             </Grid>
           </Grid>
           <br />
-          <Typography variant="h4">Before downloading…</Typography>
-          <Typography variant="body1">
-            Some few things require you to have{" "}
-            <a
-              href="https://optifine.net/home"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Optifine
-            </a>{" "}
-            installed, like a proper loading screen when starting the game, and
-            that you play in either German (Germany), English (US) or English
-            (United Kingdom). Otherwise some texts might be hard to read.
-            <br />
-            Feedback can be provided through my social media or via email and is
-            really appreciated.
-            <br />
-            And if you happen to care: I play this game along with{" "}
-            <a
-              href="https://www.curseforge.com/minecraft/texture-packs/nates-tweaks"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Nate's Tweaks
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://www.bitslablab.com/bslshaders/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              BSL Shaders
-            </a>
-            .
-          </Typography>
+          <Typography variant="h4">Prerequisites</Typography>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <RiInstallLine />
+              </ListItemIcon>
+              <ListItemText>
+                If you haven't already,{" "}
+                <a
+                  href="https://optifine.net/downloads"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  install Optifine
+                </a>{" "}
+                for the best experience with this pack.
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiContrastLine />
+              </ListItemIcon>
+              <ListItemText>
+                As of now, text display errors occur when playing in languages
+                other than German (Germany), English (UK) or English (US).
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiGithubLine />
+              </ListItemIcon>
+              <ListItemText>
+                For info on what you may do with this resource pack and how you
+                can contribute, check out the{" "}
+                <a
+                  href="https://github.com/pprmint/mintcraft"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github repository
+                </a>
+                .
+              </ListItemText>
+            </ListItem>
+          </List>
           <br />
           <Button
-            href="/assets/downloads/Mintcraft_1.01.zip"
+            href="/assets/downloads/Mintcraft_1.2.zip"
             variant="outlined"
             size="large"
             color="primary"
             startIcon={<RiDownload2Line />}
+            style={{ marginRight: "10px" }}
           >
-            Download for 1.16.2+
+            Download for 1.17
+          </Button>
+          <Button
+            href="/assets/downloads/Mintcraft_1.1.zip"
+            variant="text"
+            size="large"
+            color="primary"
+          >
+            Download for 1.16
           </Button>
         </div>
       </Container>

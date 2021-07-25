@@ -124,18 +124,31 @@ a {
   outline: none;
 }
 p a {
-  color: #fff;
-  opacity: 0.8;
+  color: #fff !important;
   text-decoration: none;
   transition: 0.2s;
+  border-bottom: 0px solid #ffffff00;
 }
 p a:hover {
-  opacity: 1;
   transition: 0.2s;
+  border-bottom: 1px solid #ffffff;
+}
+.MuiListItemText-root a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom: 0px solid #ffffff00;
+}
+.MuiListItemText-root a:hover {
+  transition: 0.2s;
+  border-bottom: 1px solid #ffffff;
 }
 
 .MuiListItemIcon-root {
   font-size: 20px;
+}
+.MuiListItemText-root {
+  color: #b3b3b3;
 }
 
 #content {

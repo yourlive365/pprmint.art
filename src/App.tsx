@@ -17,7 +17,7 @@ import Faq from "./pages/faq/FAQ";
 import Support from "./pages/support/Support";
 import MintSansDL from "./pages/downloads/mintsans/MintSans";
 import MintAltDL from "./pages/downloads/mintalternative/MintAlt";
-import MintCraftDL from "./pages/downloads/mintcraft/MintCraft";
+import MintcraftDL from "./pages/downloads/mintcraft/Mintcraft";
 import Win10TilesDL from "./pages/downloads/win10tiles/WinTiles";
 import HealthSafety from "./pages/healthsafety/HealthSafety";
 import Error404 from "./pages/404/Error404";
@@ -120,7 +120,7 @@ function App() {
             <MintAltDL />
           </Route>
           <Route path={"/downloads/mintcraft"} exact>
-            <MintCraftDL />
+            <MintcraftDL />
           </Route>
           <Route path={"/downloads/win10tiles"} exact>
             <Win10TilesDL />
