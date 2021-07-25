@@ -94,7 +94,7 @@ function Contact() {
             </Typography>
             <br />
             <a
-              href="http://discord.pprmint.de"
+              href="https://discord.gg/Vw9JXwr"
               target="_blank"
               rel="noopener noreferrer"
             >
