@@ -30,7 +30,7 @@ import SurvivalUnderwater from "./images/survival_underwater.png";
 import CreativeSearch from "./images/creative_search.png";
 import Beacon from "./images/beacon.png";
 
-function MintCraftDL() {
+function MintcraftDL() {
   return (
     <>
       <Helmet>
@@ -350,4 +350,4 @@ function MintCraftDL() {
   );
 }
 
-export default MintCraftDL;
+export default MintcraftDL;
