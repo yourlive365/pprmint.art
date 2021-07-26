@@ -319,7 +319,7 @@ function MintcraftDL() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Github repository
+                  GitHub repository
                 </a>
                 .
               </ListItemText>
