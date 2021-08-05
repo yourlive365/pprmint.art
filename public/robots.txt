@@ -3,4 +3,3 @@ User-agent: *
 Disallow: /404/
 Disallow: /assets/
 Disallow: /static/media
-Disallow: /motivation/

@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link, Typography, Grid, Container } from "@material-ui/core";
+import { Link, Typography, Grid, Container, Divider } from "@material-ui/core";
 
 interface QAProps {
   question: string;
@@ -27,7 +27,8 @@ function QA(props: QAProps) {
           style={{
             fontSize: "36px",
             color: "#3dd17f",
-            fontFamily: "DM Serif Display",
+            fontFamily: "Podkova",
+            fontWeight: "bold",
             lineHeight: "0",
           }}
         >
@@ -36,6 +37,7 @@ function QA(props: QAProps) {
         {props.answer}
       </Typography>
       <br />
+      <Divider />
       <br />
     </div>
   );
@@ -55,7 +57,8 @@ function QAwithQuote(props: QAwithQuoteProps) {
           style={{
             fontSize: "36px",
             color: "#3dd17f",
-            fontFamily: "DM Serif Display",
+            fontFamily: "Podkova",
+            fontWeight: "bold",
             lineHeight: "0",
           }}
         >
@@ -75,6 +78,7 @@ function QAwithQuote(props: QAwithQuoteProps) {
         </div>
       </Typography>
       <br />
+      <Divider />
       <br />
     </div>
   );
@@ -110,7 +114,7 @@ function About() {
           />
           <QA
             question="Can you make a (thing here) for me?"
-            answer="Most likely not. Generally speaking, I don't work for others, unless it's for people I know well enough for me to consider them so-called friends. There are several reasons why I won't work for strangers for the time being."
+            answer="Most likely not. Generally speaking, I don't work for others, unless it's for people I know well enough for me to consider them so-called friends. There are several reasons why I won't work for strangers for the time being. One of which is the lack of a proper payment method that I could offer."
           />
           <QAwithQuote
             question="May I use any of your works in my own project?"
@@ -119,7 +123,7 @@ function About() {
           />
           <QA
             question="What software do you use?"
-            answer="I mainly use Serif Affinity Designer and Adobe After Effects for most of my creations. Audio recording and editing is done in Adobe Audition."
+            answer="I mainly use Serif Affinity Designer and Adobe After Effects for most of my creations. Audio recording and editing is done in Audition and video editing in Premiere Pro."
           />
           <QA
             question="Why did you forget the GameCube disc?"
@@ -127,7 +131,7 @@ function About() {
           />
           <QA
             question="Is there a way for me to support you?"
-            answer="Giving feedback to my works is one way, buying me a hot brew on my Ko-fi profile is another. Check out the new Support page for more info."
+            answer="Giving feedback to my works is one way, buying me a hot brew on my Ko-fi profile is another. Check out the Support page for more info."
           />
         </div>
       </Container>

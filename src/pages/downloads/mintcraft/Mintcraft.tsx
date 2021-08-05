@@ -9,18 +9,22 @@ import {
   ListItemIcon,
   ListItemText,
   Container,
+  Divider,
 } from "@material-ui/core";
 
 import Image from "material-ui-image";
 
 import {
-  RiAddLine,
   RiPaintFill,
   RiDownload2Line,
-  RiInstallLine,
-  RiFileTextLine,
-  RiContrastLine,
-  RiGithubLine,
+  RiFileList2Line,
+  RiCheckboxCircleLine,
+  RiGitMergeLine,
+  RiFileZipLine,
+  RiPaletteLine,
+  RiDropLine,
+  RiCloseCircleLine,
+  RiArrowRightUpLine,
 } from "react-icons/ri";
 
 import TitleScreen from "./images/title.png";
@@ -29,6 +33,7 @@ import SurvivalInventory from "./images/survival_inventory.png";
 import SurvivalUnderwater from "./images/survival_underwater.png";
 import CreativeSearch from "./images/creative_search.png";
 import Beacon from "./images/beacon.png";
+import Chest from "./images/mintbit_chest.png";
 
 function MintcraftDL() {
   return (
@@ -55,14 +60,16 @@ function MintcraftDL() {
 
       <Container id="wrapper">
         <div id="content">
-          <Typography variant="h4">Changes in version 1.2</Typography>
+          <Typography variant="h4">Changes in version 1.3</Typography>
+          <Typography variant="h5">Added:</Typography>
           <List>
             <ListItem>
               <ListItemIcon>
-                <RiAddLine />
+                <RiGitMergeLine />
               </ListItemIcon>
               <ListItemText>
-                Now supports version 1.17 and above. I hope.
+                JSON files from Vanilla Tweaks to support many many MANY more
+                languages to display text correctly.
               </ListItemText>
             </ListItem>
             <ListItem>
@@ -70,76 +77,48 @@ function MintcraftDL() {
                 <RiPaintFill />
               </ListItemIcon>
               <ListItemText>
-                Changed design of buttons, containers and icons.
+                More custom colors, especially for the durability bar that
+                appears below used tools.
               </ListItemText>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <RiFileTextLine />
+                <RiFileList2Line />
               </ListItemIcon>
               <ListItemText>
-                Added even more splash texts and exclamation marks, featuring
-                quotes from{" "}
-                <a
-                  href="https://twitter.com/Gamer_Kold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Kold
-                </a>
-                ,{" "}
-                <a
-                  href="https://twitter.com/ScreamRepeat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ScreamRepeat
-                </a>
-                ,{" "}
-                <a
-                  href="https://twitter.com/notkoutsie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Koutsie
-                </a>
-                ,{" "}
-                <a
-                  href="https://twitter.com/Voluna_Awoo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Voluna
-                </a>
-                ,{" "}
-                <a
-                  href="https://twitter.com/TaromaruYuki"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Taromaru
-                </a>
-                ,{" "}
-                <a
-                  href="https://twitter.com/emplexx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Emplexx
-                </a>{" "}
-                and{" "}
-                <a
-                  href="https://twitter.com/foxylucklol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  FoxyLuck
-                </a>
-                !
+                A credits text document crediting third-party resources.
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiFileZipLine />
+              </ListItemIcon>
+              <ListItemText>
+                A custom font I made recently for the game that you can download
+                separately below.
               </ListItemText>
             </ListItem>
           </List>
-          <br />
+          <Typography variant="h5">Fixed:</Typography>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <RiPaletteLine />
+              </ListItemIcon>
+              <ListItemText>
+                Some inconsistent colors used for bars.
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiDropLine />
+              </ListItemIcon>
+              <ListItemText>
+                Red pixels around the text box for renaming items in an anvil.
+              </ListItemText>
+            </ListItem>
+          </List>
+          <Divider />
           <br />
           <Typography variant="h4">Features of this pack</Typography>
           <Typography variant="h5">Different title screen music</Typography>
@@ -190,9 +169,9 @@ function MintcraftDL() {
             Light-grey isn’t my cup of tea, so I made things dark-grey instead.
           </Typography>
           <br />
+          <Divider />
           <br />
           <Typography variant="h4">Screenshots</Typography>
-          <br />
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6}>
               <a href={TitleScreen} target="_blank" rel="noopener noreferrer">
@@ -280,54 +259,195 @@ function MintcraftDL() {
             </Grid>
           </Grid>
           <br />
-          <Typography variant="h4">Prerequisites</Typography>
+          <Divider />
+          <br />
+          <Typography variant="h4">Dos and Don'ts</Typography>
+          <Typography variant="h5" color="primary">
+            Do:
+          </Typography>
           <List>
             <ListItem>
               <ListItemIcon>
-                <RiInstallLine />
+                <RiCheckboxCircleLine />
               </ListItemIcon>
               <ListItemText>
-                If you haven't already,{" "}
-                <a
-                  href="https://optifine.net/downloads"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  install Optifine
-                </a>{" "}
-                for the best experience with this pack.
+                Use and modify Mintcraft to your liking and for personal use.
               </ListItemText>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <RiContrastLine />
+                <RiCheckboxCircleLine />
               </ListItemIcon>
               <ListItemText>
-                As of now, text display errors occur when playing in languages
-                other than German (Germany), English (UK) or English (US).
+                Use this pack, the original or modified, in online videos,
+                monetized or not.
               </ListItemText>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <RiGithubLine />
+                <RiCheckboxCircleLine />
               </ListItemIcon>
               <ListItemText>
-                For info on what you may do with this resource pack and how you
-                can contribute, check out the{" "}
-                <a
-                  href="https://github.com/pprmint/mintcraft"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub repository
-                </a>
-                .
+                Share this pack, or your modified version of it, with friends
+                <i> privately</i>.
               </ListItemText>
             </ListItem>
           </List>
+          <Typography variant="h5" color="error">
+            Don't:
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <RiCloseCircleLine />
+              </ListItemIcon>
+              <ListItemText>
+                Host, mirror, sell or otherwise publish versions, parts and/or
+                modifications of Mintcraft
+                <i> anywhere</i>.
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiCloseCircleLine />
+              </ListItemIcon>
+              <ListItemText>
+                Host, mirror, sell or otherwise publish versions, parts and/or
+                modifications of Mintcraft
+                <i> anyhow</i>.
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <RiCloseCircleLine />
+              </ListItemIcon>
+              <ListItemText>
+                Host, mirror, sell or otherwise publish versions, parts and/or
+                modifications of Mintcraft
+                <i> anywhen</i>.
+              </ListItemText>
+            </ListItem>
+          </List>
+          <Divider />
+          <br />
+          <Typography variant="h4">Add-ons</Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={4}>
+              <a href={Chest} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={Chest}
+                  width="100%"
+                  alt="Chest container with MintBit font applied."
+                  aspectRatio={185 / 221}
+                  color="transparent"
+                />
+              </a>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <Typography variant="h5">MintBit</Typography>
+              <Typography variant="body1">
+                A font that I specifically made to use alongside Mintcraft. Or
+                well, in Minecraft in general. There's nothing stopping you from
+                just using it with any other resource pack out there.
+                <br />
+                Simply apply this like you would any other resource pack.
+                Provided you know how to do that.
+              </Typography>
+              <br />
+              <Button
+                href="/assets/downloads/MintBit_font.zip"
+                variant="outlined"
+                size="large"
+                color="primary"
+                startIcon={<RiDownload2Line />}
+                style={{ marginRight: "10px" }}
+              >
+                Download
+              </Button>
+              <br />
+              <br />
+              <Divider />
+              <br />
+              <Typography variant="body2">And before you ask</Typography>
+              <Typography variant="h5">
+                How can I download the font itself?
+              </Typography>
+              <Typography variant="body1">
+                As in OTF-font? Simply put: Not at all. At least not yet.
+                <br />
+                While I currently have a working font file sitting on my drive
+                and while there is a "MintBit" page on this site, one is not
+                quite ready for public release just yet and the other is a
+                gigantic placeholder.
+              </Typography>
+              <Typography variant="body2" style={{ color: "#ffffff33" }}>
+                That's to say, it's an exact copy of the MintSans page.
+              </Typography>
+              <Typography>
+                So while I get both ready, I hope you can be a bit more patient
+                and meanwhile enjoy using MintBit in Minecraft.
+              </Typography>
+            </Grid>
+          </Grid>
+          <br />
+          <Divider />
+          <br />
+          <Typography variant="h4">How to install</Typography>
+          <Typography variant="body1">
+            If you haven't already,{" "}
+            <a
+              href="https://optifine.net/downloads"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              install Optifine
+            </a>{" "}
+            before you start using this pack. After you downloaded this pack,
+            paste it into your resource packs folder. You can open it from the
+            game by clicking on [Options...], [Resource Packs...] and then [Open
+            Pack Folder].
+          </Typography>
+          <br />
+          <Divider />
+          <br />
+          <Typography variant="h4">Credits</Typography>
+          <a
+            href="https://vanillatweaks.net"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Typography variant="h5">
+              Vanilla Tweaks
+              <RiArrowRightUpLine
+                style={{ fontSize: "28px", verticalAlign: "bottom" }}
+              />
+            </Typography>
+          </a>
+          <Typography variant="body1">
+            JSON files to fix some text colors. Remember how I said this pack
+            was only compatible with 3 languages? Yeah that was fixed with this.
+          </Typography>
+          <br />
+          <a href="https://c418.org" target="_blank" rel="noopener noreferrer">
+            <Typography variant="h5">
+              C418
+              <RiArrowRightUpLine
+                style={{ fontSize: "28px", verticalAlign: "bottom" }}
+              />
+            </Typography>
+          </a>
+          <Typography variant="body1">
+            Title screen music. And, well, most other songs in this game as
+            well. 
+          </Typography>
+          <br />
+          <Divider />
+          <br />
+          <Typography variant="h4">DOWNLOAD BUTTONS!!!</Typography>
+          <Typography variant="body1">Click 'em. You earned it.</Typography>
           <br />
           <Button
-            href="/assets/downloads/Mintcraft_1.2.zip"
+            href="/assets/downloads/Mintcraft_1.3.zip"
             variant="outlined"
             size="large"
             color="primary"

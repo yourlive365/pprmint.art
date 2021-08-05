@@ -17,8 +17,8 @@ import {
   RiPaintBrushLine,
   RiFileDownloadLine,
   RiMailLine,
-  RiExternalLinkLine,
   RiQuestionnaireLine,
+  RiArrowRightLine,
 } from "react-icons/ri";
 
 function Home() {
@@ -61,7 +61,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography gutterBottom variant="h4">
+                    <Typography variant="h4">
                       <RiPaintBrushLine
                         color="#3dd17f"
                         size="42px"
@@ -88,7 +88,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography gutterBottom variant="h4">
+                    <Typography variant="h4">
                       <RiFileDownloadLine
                         color="#256eff"
                         size="42px"
@@ -99,6 +99,9 @@ function Home() {
                     <Typography variant="body1" color="textSecondary">
                       Things I made you can use somehow.
                     </Typography>
+                    {/* <Typography variant="body2" color="textPrimary">
+                      <RiArrowRightLine style={{verticalAlign: "top", fontSize: "20px"}} /> <Link to="/downloads/mintcraft">Mintcraft</Link>
+                    </Typography> */}
                   </CardContent>
                 </Card>
               </Link>
@@ -115,7 +118,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography gutterBottom variant="h4">
+                    <Typography variant="h4">
                       <RiQuestionnaireLine
                         color="#e63946"
                         size="42px"
@@ -142,7 +145,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography gutterBottom variant="h4">
+                    <Typography variant="h4">
                       <RiMailLine
                         color="#f9c80e"
                         size="42px"

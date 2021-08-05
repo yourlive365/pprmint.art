@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'MintSans';
+    src: url('mintsansbold-webfont.woff2') format('woff2'),
+         url('mintsansbold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MintSans';
+    src: url('mintsansextralight-webfont.woff2') format('woff2'),
+         url('mintsansextralight-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MintSans';
+    src: url('mintsansregular-webfont.woff2') format('woff2'),
+         url('mintsansregular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
