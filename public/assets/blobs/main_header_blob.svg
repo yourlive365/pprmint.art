@@ -16,9 +16,9 @@
         </g>
     </g>
     <defs>
-        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-900,1.69787e-13,-1.10218e-13,-1386.42,900,-12.8957)"><stop offset="0" style="stop-color:rgb(21,59,39);stop-opacity:0"/><stop offset="1" style="stop-color:rgb(21,59,39);stop-opacity:0.25"/></linearGradient>
-        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(900,0,0,1386.42,0,-12.8957)"><stop offset="0" style="stop-color:rgb(34,115,72);stop-opacity:0"/><stop offset="1" style="stop-color:rgb(34,115,72);stop-opacity:0.25"/></linearGradient>
-        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-900,1.69787e-13,-1.10218e-13,-1386.42,900,3.96562)"><stop offset="0" style="stop-color:rgb(48,174,106);stop-opacity:0"/><stop offset="1" style="stop-color:rgb(48,174,106);stop-opacity:0.25"/></linearGradient>
-        <linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(900,0,0,1386.42,0,225.92)"><stop offset="0" style="stop-color:rgb(56,209,127);stop-opacity:0"/><stop offset="1" style="stop-color:rgb(56,209,127);stop-opacity:0.25"/></linearGradient>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-900,1.69787e-13,-1.10218e-13,-1386.42,900,-12.8957)"><stop offset="0" style="stop-color:rgb(21,59,39);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(21,59,39);stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(900,0,0,1386.42,0,-12.8957)"><stop offset="0" style="stop-color:rgb(34,115,72);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(34,115,72);stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-900,1.69787e-13,-1.10218e-13,-1386.42,900,3.96562)"><stop offset="0" style="stop-color:rgb(48,174,106);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(48,174,106);stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(900,0,0,1386.42,0,225.92)"><stop offset="0" style="stop-color:rgb(56,209,127);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(56,209,127);stop-opacity:0"/></linearGradient>
     </defs>
 </svg>
