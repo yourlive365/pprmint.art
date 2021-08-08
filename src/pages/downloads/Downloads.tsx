@@ -82,7 +82,7 @@ function Downloads() {
                 title="Mintcraft"
                 image={MintcraftPreview}
                 description="Dark resource pack for Minecraft."
-                download="/assets/downloads/Mintcraft_1.2.zip"
+                download="/assets/downloads/Mintcraft_1.3.zip"
                 link="/downloads/mintcraft"
               />
             </Grid>
