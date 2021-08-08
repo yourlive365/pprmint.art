@@ -67,11 +67,11 @@ function WinTilesDL() {
           content="Make your start menu pretty (maybe) by using these in yours. Best if you're running version 20H2 or later."
         />
       </Helmet>
-      <Container id="wrapper">
+      <Container className="wrapper">
         <Typography variant="h1" align="center">
           Windows 10 Tiles.
         </Typography>
-        <div id="content">
+        <div className="content">
           <Grid container>
             <TileImage image={AfterEffects} />
             <TileImage image={Audition} />

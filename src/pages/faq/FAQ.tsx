@@ -15,8 +15,10 @@ interface QAwithQuoteProps {
 function QA(props: QAProps) {
   return (
     <div>
-      <Typography variant="h5">
-        <span style={{ fontSize: "36px", color: "#e63846", lineHeight: "0" }}>
+      <Typography variant="h3">
+        <span
+          style={{ fontSize: "2.125rem", color: "#e63846", lineHeight: "0" }}
+        >
           Q:{" "}
         </span>
         {props.question}
@@ -25,7 +27,7 @@ function QA(props: QAProps) {
       <Typography variant="body1">
         <span
           style={{
-            fontSize: "36px",
+            fontSize: "2.125rem",
             color: "#3dd17f",
             fontFamily: "Podkova",
             fontWeight: "bold",
@@ -45,8 +47,10 @@ function QA(props: QAProps) {
 function QAwithQuote(props: QAwithQuoteProps) {
   return (
     <div>
-      <Typography variant="h5">
-        <span style={{ fontSize: "36px", color: "#e63846", lineHeight: "0" }}>
+      <Typography variant="h3">
+        <span
+          style={{ fontSize: "2.125rem", color: "#e63846", lineHeight: "0" }}
+        >
           Q:{" "}
         </span>
         {props.question}
@@ -55,7 +59,7 @@ function QAwithQuote(props: QAwithQuoteProps) {
       <Typography variant="body1">
         <span
           style={{
-            fontSize: "36px",
+            fontSize: "2.125rem",
             color: "#3dd17f",
             fontFamily: "Podkova",
             fontWeight: "bold",
@@ -95,19 +99,12 @@ function About() {
           content="Have a look here before you send me a message with your question."
         />
       </Helmet>
-      <img
-        src="./assets/blobs/faq_header_blob.svg"
-        style={{
-          position: "absolute",
-          animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards",
-          opacity: "0",
-        }}
-      />
-      <Container id="wrapper">
+      <img className="header" src="./assets/blobs/faq_header_blob.svg" />
+      <Container className="wrapper">
         <Typography variant="h1" align="center">
           FAQ.
         </Typography>
-        <div id="content">
+        <div className="content">
           <QA
             question="Who are you?"
             answer="My name is Nicklas, but you can (and should) just call me Nick. I'm a 17 years old dude from Germany and spend my spare time with design, anime and photography."
@@ -131,7 +128,7 @@ function About() {
           />
           <QA
             question="Is there a way for me to support you?"
-            answer="Giving feedback to my works is one way, buying me a hot brew on my Ko-fi profile is another. Check out the Support page for more info."
+            answer="Kind words go a long way. If there's ever growing demand to support me financially as well, I might reconsider opening a Patreon or Ko-fi."
           />
         </div>
       </Container>

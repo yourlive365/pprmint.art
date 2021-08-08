@@ -32,20 +32,13 @@ function Home() {
           content="Good today and welcome to my online presence, or whatever one calls it. Here you're able to look at my works in full quality, download some things I created and get in touch with me."
         />
       </Helmet>
-      <img
-        src="./assets/blobs/main_header_blob.svg"
-        style={{
-          position: "absolute",
-          animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards",
-          opacity: "0",
-        }}
-      />
-      <Container id="wrapper">
+      <img className="header" src="./assets/blobs/main_header_blob.svg" />
+      <Container className="wrapper">
         <Typography variant="h1" align="center">
           Good today.
         </Typography>
-        <div id="content">
-          <Typography variant="h4" align="center">
+        <div className="content">
+          <Typography variant="h2" align="center">
             I move pixels around. Sometimes they look good.
           </Typography>
           <br />
@@ -53,7 +46,7 @@ function Home() {
             <Grid item xs={12} sm={6}>
               <Link to="works">
                 <Card
-                  id="primary"
+                  className="primary"
                   style={{
                     backgroundImage: "url(./assets/blobs/works_blob.svg",
                     backgroundRepeat: "no-repeat",
@@ -61,7 +54,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h4">
+                    <Typography variant="h2">
                       <RiPaintBrushLine
                         color="#3dd17f"
                         size="42px"
@@ -80,7 +73,7 @@ function Home() {
             <Grid item xs={12} sm={6}>
               <Link to="/downloads">
                 <Card
-                  id="primary"
+                  className="primary"
                   style={{
                     backgroundImage: "url(./assets/blobs/downloads_blob.svg",
                     backgroundRepeat: "no-repeat",
@@ -88,7 +81,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h4">
+                    <Typography variant="h2">
                       <RiFileDownloadLine
                         color="#256eff"
                         size="42px"
@@ -110,7 +103,7 @@ function Home() {
             <Grid item xs={12} sm={6}>
               <Link to="/faq">
                 <Card
-                  id="primary"
+                  className="primary"
                   style={{
                     backgroundImage: "url(./assets/blobs/ko-fi_blob.svg",
                     backgroundRepeat: "no-repeat",
@@ -118,7 +111,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h4">
+                    <Typography variant="h2">
                       <RiQuestionnaireLine
                         color="#e63946"
                         size="42px"
@@ -137,7 +130,7 @@ function Home() {
             <Grid item xs={12} sm={6}>
               <Link to="/contact">
                 <Card
-                  id="primary"
+                  className="primary"
                   style={{
                     backgroundImage: "url(./assets/blobs/contact_blob.svg",
                     backgroundRepeat: "no-repeat",
@@ -145,7 +138,7 @@ function Home() {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h4">
+                    <Typography variant="h2">
                       <RiMailLine
                         color="#f9c80e"
                         size="42px"

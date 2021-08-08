@@ -46,22 +46,15 @@ function MintcraftDL() {
           content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking. Craft."
         />
       </Helmet>
-      <img
-        src="/assets/blobs/mintcraft_header_blob.svg"
-        style={{
-          position: "absolute",
-          animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards",
-          opacity: "0",
-        }}
-      />
+      <img className="header" src="/assets/blobs/mintcraft_header_blob.svg" />
       <Typography variant="h1" align="center">
         Mint&#173;craft.
       </Typography>
 
-      <Container id="wrapper">
-        <div id="content">
-          <Typography variant="h4">Changes in version 1.3</Typography>
-          <Typography variant="h5">Added:</Typography>
+      <Container className="wrapper">
+        <div className="content">
+          <Typography variant="h2">Changes in version 1.3</Typography>
+          <Typography variant="h3">Added:</Typography>
           <List>
             <ListItem>
               <ListItemIcon>
@@ -99,7 +92,7 @@ function MintcraftDL() {
               </ListItemText>
             </ListItem>
           </List>
-          <Typography variant="h5">Fixed:</Typography>
+          <Typography variant="h3">Fixed:</Typography>
           <List>
             <ListItem>
               <ListItemIcon>
@@ -120,8 +113,8 @@ function MintcraftDL() {
           </List>
           <Divider />
           <br />
-          <Typography variant="h4">Features of this pack</Typography>
-          <Typography variant="h5">Different title screen music</Typography>
+          <Typography variant="h2">Features of this pack</Typography>
+          <Typography variant="h3">Different title screen music</Typography>
           <Typography variant="body1">
             I replaced the tracks playing behind the main menu with other songs
             by C418, namely{" "}
@@ -158,20 +151,20 @@ function MintcraftDL() {
             </a>
           </Typography>
           <br />
-          <Typography variant="h5">Better round corners</Typography>
+          <Typography variant="h3">Better round corners</Typography>
           <Typography variant="body1">
             The round corners in the default pack are a tiny bit inconsistent
             and buttons don’t have them at all. Guess what I did.
           </Typography>
           <br />
-          <Typography variant="h5">Generally darker</Typography>
+          <Typography variant="h3">Generally darker</Typography>
           <Typography variant="body1">
             Light-grey isn’t my cup of tea, so I made things dark-grey instead.
           </Typography>
           <br />
           <Divider />
           <br />
-          <Typography variant="h4">Screenshots</Typography>
+          <Typography variant="h2">Screenshots</Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6}>
               <a href={TitleScreen} target="_blank" rel="noopener noreferrer">
@@ -261,8 +254,8 @@ function MintcraftDL() {
           <br />
           <Divider />
           <br />
-          <Typography variant="h4">Dos and Don'ts</Typography>
-          <Typography variant="h5" color="primary">
+          <Typography variant="h2">Dos and Don'ts</Typography>
+          <Typography variant="h3" color="primary">
             Do:
           </Typography>
           <List>
@@ -293,7 +286,7 @@ function MintcraftDL() {
               </ListItemText>
             </ListItem>
           </List>
-          <Typography variant="h5" color="error">
+          <Typography variant="h3" color="error">
             Don't:
           </Typography>
           <List>
@@ -330,7 +323,7 @@ function MintcraftDL() {
           </List>
           <Divider />
           <br />
-          <Typography variant="h4">Add-ons</Typography>
+          <Typography variant="h2">Add-ons</Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={4}>
               <a href={Chest} target="_blank" rel="noopener noreferrer">
@@ -344,7 +337,7 @@ function MintcraftDL() {
               </a>
             </Grid>
             <Grid item xs={12} sm={8}>
-              <Typography variant="h5">MintBit</Typography>
+              <Typography variant="h3">MintBit</Typography>
               <Typography variant="body1">
                 A font that I specifically made to use alongside Mintcraft. Or
                 well, in Minecraft in general. There's nothing stopping you from
@@ -369,7 +362,7 @@ function MintcraftDL() {
               <Divider />
               <br />
               <Typography variant="body2">And before you ask</Typography>
-              <Typography variant="h5">
+              <Typography variant="h3">
                 How can I download the font itself?
               </Typography>
               <Typography variant="body1">
@@ -392,7 +385,7 @@ function MintcraftDL() {
           <br />
           <Divider />
           <br />
-          <Typography variant="h4">How to install</Typography>
+          <Typography variant="h2">How to install</Typography>
           <Typography variant="body1">
             If you haven't already,{" "}
             <a
@@ -410,13 +403,13 @@ function MintcraftDL() {
           <br />
           <Divider />
           <br />
-          <Typography variant="h4">Credits</Typography>
+          <Typography variant="h2">Credits</Typography>
           <a
             href="https://vanillatweaks.net"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Typography variant="h5">
+            <Typography variant="h3">
               Vanilla Tweaks
               <RiArrowRightUpLine
                 style={{ fontSize: "28px", verticalAlign: "bottom" }}
@@ -429,7 +422,7 @@ function MintcraftDL() {
           </Typography>
           <br />
           <a href="https://c418.org" target="_blank" rel="noopener noreferrer">
-            <Typography variant="h5">
+            <Typography variant="h3">
               C418
               <RiArrowRightUpLine
                 style={{ fontSize: "28px", verticalAlign: "bottom" }}
@@ -438,12 +431,12 @@ function MintcraftDL() {
           </a>
           <Typography variant="body1">
             Title screen music. And, well, most other songs in this game as
-            well. 
+            well.
           </Typography>
           <br />
           <Divider />
           <br />
-          <Typography variant="h4">DOWNLOAD BUTTONS!!!</Typography>
+          <Typography variant="h2">DOWNLOAD BUTTONS!!!</Typography>
           <Typography variant="body1">Click 'em. You earned it.</Typography>
           <br />
           <Button

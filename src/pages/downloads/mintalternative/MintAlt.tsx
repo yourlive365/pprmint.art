@@ -39,9 +39,9 @@ function MintAltDL() {
           content="A terrible name for an equally terrible fo- I mean This is a font inspired by Google's Material icons, as some of these have texts in them as well. I can only really recommend the numbers in here."
         />
       </Helmet>
-      <Container id="wrapper">
+      <Container className="wrapper">
         <Typography variant="h1" align="center">MINT&#173;ALT</Typography>
-        <div id="content">
+        <div className="content">
           <Typography variant="h4" style={{ fontWeight: "lighter" }}>
             INSPIRED BY GOOGLE'S MATERIAL ICONS.
             <br />

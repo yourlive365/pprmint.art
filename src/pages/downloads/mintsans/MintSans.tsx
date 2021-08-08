@@ -36,12 +36,12 @@ function MintSansDL() {
           content="My first geometric font. Not bad for a first attempt, but not necessarily good either. Licensed under the SIL Open Font Lincense, so you can use it anywhere you want, as long as you don't sell the fonts on their own."
         />
       </Helmet>
-      <Container id="wrapper">
+      <Container className="wrapper">
         <Typography variant="h1" align="center">
           Mint&#173;<span style={{ fontWeight: "normal" }}>Sans</span>{" "}
           <span style={{ fontWeight: "bold", color: "#256eff" }}>V2</span>
         </Typography>
-        <div id="content">
+        <div className="content">
           <div style={{ marginBottom: "150px" }}>
             <Typography variant="h4" style={{ fontWeight: "lighter" }}>
               There were so many things I disliked about the first version I

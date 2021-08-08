@@ -15,24 +15,17 @@ function FourOhFour() {
           content="This page was not fo- wait hang on, you shouldn't be seeing this if you're on Google or something. "
         />
       </Helmet>
-      <img
-        src="./assets/blobs/404_header_blob.svg"
-        style={{
-          position: "absolute",
-          animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards",
-          opacity: "0",
-        }}
-      />
-      <Container id="wrapper">
+      <img className="header" src="./assets/blobs/404_header_blob.svg" />
+      <Container className="wrapper">
         <Typography variant="h1" align="center">
-          Whoopsy.
+          Nüscht hier.
         </Typography>
-        <div id="content">
-          <Typography variant="h4" align="center">
+        <div className="content">
+          <Typography variant="h2" align="center">
             This page wasn't found.
           </Typography>
           <br />
-          <Typography variant="h5" align="center">
+          <Typography variant="h3" align="center">
             Alas, thy efforts were for naught.
             <br />
             Thy hope of coming across a working page shan't be fulfilled.

@@ -24,7 +24,6 @@ import MintcraftDL from "./pages/downloads/mintcraft/Mintcraft";
 import Win10TilesDL from "./pages/downloads/win10tiles/WinTiles";
 import HealthSafety from "./pages/healthsafety/HealthSafety";
 import Faq from "./pages/faq/FAQ";
-import Support from "./pages/support/Support";
 import Error404 from "./pages/404/Error404";
 
 import Wordmark from "./assets/wordmark.svg";
@@ -37,7 +36,6 @@ import {
   RiFileDownloadLine,
   RiMailLine,
   RiQuestionnaireLine,
-  RiHandCoinLine,
 } from "react-icons/ri";
 
 const theme = createTheme({
@@ -65,7 +63,7 @@ function App() {
       <Router>
         <AppBar position="fixed" elevation={2}>
           <Container maxWidth="xl">
-            <div id="left">
+            <div className="left">
               <Link to="/">
                 <img
                   src={Wordmark}
@@ -75,11 +73,11 @@ function App() {
                 />
               </Link>
             </div>
-            <div id="navlinks">
+            <div className="navlinks">
               {/* These are the full text buttons displayed on larger displays.
               I just couldn't be assed to get a drawer to work in here. lmfao */}
-              <div id="navbuttons">
-                <Link id="first" to="/works" href="#top">
+              <div className="navbuttons">
+                <Link className="first" to="/works" href="#top">
                   <Button>Works</Button>
                 </Link>
                 <Link to="/downloads" href="#top">
@@ -91,14 +89,11 @@ function App() {
                 <Link to="/contact" href="#top">
                   <Button>Contact</Button>
                 </Link>
-                <Link to="/support" href="#top">
-                  <Button>Support</Button>
-                </Link>
               </div>
               {/* This div only displays at sizes 599px and below. At 400 the left and right padding
               of these buttons decreases as well, so they don't break out of the nav bar. */}
-              <div id="navicons">
-                <Link id="first" to="/works">
+              <div className="navicons">
+                <Link className="first" to="/works">
                   <IconButton>
                     <RiPaintBrushLine />
                   </IconButton>
@@ -116,11 +111,6 @@ function App() {
                 <Link to="/contact">
                   <IconButton>
                     <RiQuestionnaireLine />
-                  </IconButton>
-                </Link>
-                <Link to="/support">
-                  <IconButton>
-                    <RiHandCoinLine />
                   </IconButton>
                 </Link>
               </div>
@@ -169,15 +159,10 @@ function App() {
             <Faq />
           </Route>
 
-          <Route path={"/support"} exact>
-            <Support />
-          </Route>
-
           <Route component={Error404}>
             <Error404 />
           </Route>
         </Switch>
-        <Divider />
       </Router>
     </ThemeProvider>
   );

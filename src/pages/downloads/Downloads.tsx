@@ -21,32 +21,40 @@ interface DownloadCardProps {
 
 function DownloadCard(props: DownloadCardProps) {
   return (
-    <div>
+    <div className="DownloadCard">
       <Link to={props.link}>
         <Image
           src={props.image}
           width="100%"
-          imageStyle={{ borderRadius: "8px" }}
+          imageStyle={{ borderRadius: "8px", border: "1px solid #ffffff00", transition: "all 0.2s cubic-bezier(0, 0.7, 0.5, 1)", cursor: "pointer", }}
           alt=""
           color="transparent"
-          aspectRatio={16/9}
+          aspectRatio={16 / 9}
         />
       </Link>
-      <Typography variant="h5">{props.title}</Typography>
-      <Typography variant="body1" color="textSecondary">
-        {props.description}
-      </Typography>
       <br />
-      <Link to={props.link}>
-        <Button color="default">Read more</Button>
-      </Link>
-      <Button
-        color="primary"
-        endIcon={<RiDownload2Line />}
-        href={props.download}
-      >
-        Download
-      </Button>
+      <div className="left">
+        <Link to={props.link}>
+          <Typography variant="h2">
+            {props.title}
+            <Typography variant="body1" color="textSecondary">
+              {props.description}
+            </Typography>
+          </Typography>
+        </Link>
+      </div>
+      <div className="right">
+        <Link to={props.link}>
+          <Button color="default">Read more</Button>
+        </Link>
+        <Button
+          color="primary"
+          endIcon={<RiDownload2Line />}
+          href={props.download}
+        >
+          Download
+        </Button>
+      </div>
     </div>
   );
 }
@@ -62,12 +70,14 @@ function Downloads() {
           content="Download things I made, like fonts, my Minecraft ressource pack or my Windows 10 start menu tiles. Free of charge, of course. Can't use PayPal yet, so..."
         />
       </Helmet>
-      <img src="./assets/blobs/downloads_header_blob.svg" style={{ position: "absolute", animation: "fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) .2s forwards", opacity: "0", }} />
-      <Typography variant="h1" align="center">Down&#173;loads.</Typography>
-      <Container id="wrapper">
-        <div id="content">
+      <img className="header" src="./assets/blobs/downloads_header_blob.svg" />
+      <Typography variant="h1" align="center">
+        Down&#173;loads.
+      </Typography>
+      <Container className="wrapper">
+        <div className="content">
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={6}>
               <DownloadCard
                 title="Mintcraft"
                 image={MintcraftPreview}
@@ -77,7 +87,7 @@ function Downloads() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={6}>
               <DownloadCard
                 title="MintSans"
                 image={MintSansPreview}
@@ -87,7 +97,7 @@ function Downloads() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={6}>
               <DownloadCard
                 title="MintAlternative"
                 image={MintAltPreview}
@@ -97,7 +107,7 @@ function Downloads() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={6}>
               <DownloadCard
                 title="Windows 10 Tiles"
                 image={WinTilesPreview}
