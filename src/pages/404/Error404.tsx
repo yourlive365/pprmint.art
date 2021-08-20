@@ -33,7 +33,7 @@ function FourOhFour() {
 								color="transparent"
 							/>
 						</Grid>
-						<Grid item xs={12} sm={6}>
+						<Grid item xs={12} sm={6} style={{alignSelf: "center"}} >
 							<Typography variant="h2">
 								Nothing was found under this URL.
 							</Typography>
