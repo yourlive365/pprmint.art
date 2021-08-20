@@ -1,217 +1,218 @@
 html,
 body {
-  background-color: #0a0a0a;
+	background-color: #0a0a0a;
 }
 
 @keyframes fadeTop {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
 @keyframes fadeBottom {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
 @keyframes cardImage {
-  from {
-    opacity: 1;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
+	from {
+		opacity: 1;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
 }
 @keyframes underlineDraw {
-  from {
-    width: 0px;
-    opacity: 0;
-  }
-  to {
-    width: 100px;
-    opacity: 1;
-  }
+	from {
+		width: 0px;
+		opacity: 0;
+	}
+	to {
+		width: 100px;
+		opacity: 1;
+	}
 }
 
 header.MuiAppBar-root {
-  height: 64px;
-  background-color: #151515bb !important;
-  backdrop-filter: blur(15px);
+	height: 64px;
+	background-color: #151515bb !important;
+	backdrop-filter: blur(15px);
 }
 
 .left {
-  float: left;
+	float: left;
 }
 .right {
-  float: right;
+	float: right;
 }
 .navlinks {
-  float: right;
-  margin: none;
-  text-decoration: none !important;
-  margin: 11px 0;
+	float: right;
+	margin: none;
+	text-decoration: none !important;
+	margin: 11px 0;
 }
 .navlink {
-  padding: 22px 12px;
+	padding: 22px 12px;
 }
 
 .wrapper {
-  min-height: calc(100vh - 60px);
+	min-height: calc(100vh - 60px);
 }
 
 .content {
-  opacity: 0;
-  animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.15s forwards;
+	opacity: 0;
+	animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.15s forwards;
 }
 
 img.header {
-  position: absolute;
-  animation: fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) 0.2s forwards;
-  opacity: 0;
+	position: absolute;
+	animation: fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) 0.2s forwards;
+	opacity: 0;
+	user-select: none;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Podkova", "DM Sans", "Roboto", Helvetica, Arial, sans-serif !important;
-  font-weight: bold !important;
-  color: #ebebeb;
+	font-family: "Podkova", "DM Sans", "Roboto", Helvetica, Arial, sans-serif !important;
+	font-weight: bold !important;
+	color: #ebebeb;
 }
 h1 {
-  opacity: 0;
-  animation: fadeBottom 0.5s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
-  padding-top: 150px;
-  padding-bottom: 40px;
-  hyphens: auto;
+	opacity: 0;
+	animation: fadeBottom 0.5s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
+	padding-top: 150px;
+	padding-bottom: 40px;
+	hyphens: auto;
 }
 h1::after {
-  content: "";
-  display: block;
-  position: relative;
-  background: #3dd17f;
-  width: 0px;
-  height: 7px;
-  top: 10px;
-  margin: 0 auto;
-  animation: underlineDraw 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
+	content: "";
+	display: block;
+	position: relative;
+	background: #3dd17f;
+	width: 0px;
+	height: 7px;
+	top: 10px;
+	margin: 0 auto;
+	animation: underlineDraw 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
 }
 h2 {
-  font-size: 2.125rem !important;
-  line-height: 1.235 !important;
-  padding-bottom: 15px;
+	font-size: 2.125rem !important;
+	line-height: 1.235 !important;
+	padding-bottom: 15px;
 }
 h3 {
-  font-size: 1.5rem !important;
+	font-size: 1.5rem !important;
 }
 
 p {
-  color: #b3b3b3;
+	color: #b3b3b3;
 }
 a {
-  text-decoration: none !important;
-  outline: none;
+	text-decoration: none !important;
+	outline: none;
 }
 p a {
-  color: #fff !important;
-  text-decoration: none;
-  transition: 0.2s;
-  border-bottom: 0px solid #ffffff00;
+	color: #fff !important;
+	text-decoration: none;
+	transition: 0.2s;
+	border-bottom: 0px solid #ffffff00;
 }
 p a:hover {
-  transition: 0.2s;
-  border-bottom: 1px solid #ffffff;
+	transition: 0.2s;
+	border-bottom: 1px solid #ffffff;
 }
 .MuiListItemText-root a {
-  color: #fff !important;
-  text-decoration: none;
-  transition: 0.2s;
-  border-bottom: 0px solid #ffffff00;
+	color: #fff !important;
+	text-decoration: none;
+	transition: 0.2s;
+	border-bottom: 0px solid #ffffff00;
 }
 .MuiListItemText-root a:hover {
-  transition: 0.2s;
-  border-bottom: 1px solid #ffffff;
+	transition: 0.2s;
+	border-bottom: 1px solid #ffffff;
 }
 
 .MuiListItemIcon-root {
-  font-size: 20px;
+	font-size: 20px;
 }
 .MuiListItemText-root {
-  color: #b3b3b3;
+	color: #b3b3b3;
 }
 
 .content {
-  padding-bottom: 50px;
+	padding-bottom: 50px;
 }
 
 /* Rounded corners for video embeds for example. */
 iframe {
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* I don't know what this exactly does or was supposed to do. */
 .cardImage {
-  height: 163px;
+	height: 163px;
 }
 
 /* As seen on the Home page */
 .MuiCard-root.primary {
-  padding: 10px;
-  border: 1px solid #ffffff00;
-  transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
-  cursor: pointer;
+	padding: 10px;
+	border: 1px solid #ffffff00;
+	transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
+	cursor: pointer;
 }
 .MuiCard-root.primary:hover {
-  border: 1px solid #ffffff11;
-  background-color: #151515;
-  transform: scale(1.02);
+	border: 1px solid #ffffff11;
+	background-color: #151515;
+	transform: scale(1.02);
 }
 .MuiCard-root.primary:active {
-  transform: translateY(5px);
+	transform: translateY(5px);
 }
 
 .DownloadCard img {
-  border: 1px solid #ffffff00;
-  transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
-  cursor: pointer;
+	border: 1px solid #ffffff00;
+	transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
+	cursor: pointer;
 }
 .DownloadCard img:hover {
-  border: 1px solid #ffffff11 !important;
-  transform: scale(1.02);
+	border: 1px solid #ffffff11 !important;
+	transform: scale(1.02);
 }
 .DownloadCard img:active {
-  transform: translateY(5px);
+	transform: translateY(5px);
 }
 
 /* Rounded edges for cards. */
 .MuiPaper-rounded {
-  border-radius: 8px !important;
+	border-radius: 8px !important;
 }
 
 /* Buttons used on the aforementioned cards seen in the home page. */
 button.primary::before {
-  content: "-";
-  font-weight: bolder;
-  width: 0px;
-  transform: scaleX(0);
-  transition: 0.2s;
+	content: "-";
+	font-weight: bolder;
+	width: 0px;
+	transform: scaleX(0);
+	transition: 0.2s;
 }
 button.primary:hover::before {
-  width: 18px;
-  transform: scaleX(1);
+	width: 18px;
+	transform: scaleX(1);
 }
 
 /* Made obsolete in favor of nav bar. */
@@ -224,40 +225,40 @@ button.primary:hover::before {
 /* ALL the things related to the top navigation bar. */
 
 .navlinks {
-  float: right;
+	float: right;
 }
 .navlinks button {
-  padding: 9px 10px !important;
+	padding: 9px 10px !important;
 }
 .navlinks a {
-  color: #b3b3b3;
+	color: #b3b3b3;
 }
 .navlinks a.first {
-  color: #b3b3b3;
+	color: #b3b3b3;
 }
 
 /* Only displayed at small sizes, i.e. phones. */
 .navicons {
-  display: none;
+	display: none;
 }
 
 /* Declares which kinds of navigations are displayed at which size and makes headlines smaller. */
 @media only screen and (max-width: 599px) {
-  .navbuttons {
-    display: none;
-  }
-  .navicons {
-    display: block;
-  }
-  h1 {
-    font-size: 4.25rem !important;
-  }
+	.navbuttons {
+		display: none;
+	}
+	.navicons {
+		display: block;
+	}
+	h1 {
+		font-size: 4.25rem !important;
+	}
 }
 @media only screen and (max-width: 400px) {
-  .navicons {
-    display: block;
-  }
-  .navicons button.MuiButtonBase-root {
-    padding: 10px 7px !important;
-  }
+	.navicons {
+		display: block;
+	}
+	.navicons button.MuiButtonBase-root {
+		padding: 10px 7px !important;
+	}
 }
