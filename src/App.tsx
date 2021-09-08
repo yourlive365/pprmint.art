@@ -28,15 +28,15 @@ import Error404 from "./pages/404/Error404";
 
 import Wordmark from "./assets/wordmark.svg";
 
-import "@fontsource/dm-sans";
-import "@fontsource/podkova";
+import "./assets/fonts/stylesheet.css"
 
 import {
-	RiPaintBrushLine,
 	RiFileDownloadLine,
 	RiMailLine,
 	RiQuestionnaireLine,
 } from "react-icons/ri";
+
+import { MdExplore } from "react-icons/md";
 
 const theme = createTheme({
 	palette: {
@@ -47,7 +47,7 @@ const theme = createTheme({
 		background: { default: "#0a0a0a", paper: "#121212" },
 	},
 	typography: {
-		fontFamily: '"DM Sans", "Roboto", Helvetica, Arial, sans-serif',
+		fontFamily: '"Archia", "Roboto", Helvetica, Arial, sans-serif',
 	},
 	props: {
 		MuiButton: {
@@ -61,7 +61,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Router>
-				<AppBar position="fixed" elevation={2}>
+				<AppBar position="fixed" elevation={4}>
 					<Container maxWidth="xl">
 						<div className="left">
 							<Link to="/">
@@ -77,16 +77,16 @@ function App() {
 							{/* These are the full text buttons displayed on larger displays.
                             I just couldn't be assed to get a drawer to work in here. lmfao */}
 							<div className="navbuttons">
-								<Link className="first" to="/works" href="#top">
+								<Link className="first" to="/works">
 									<Button>Works</Button>
 								</Link>
-								<Link to="/downloads" href="#top">
+								<Link to="/downloads">
 									<Button>Downloads</Button>
 								</Link>
-								<Link to="/faq" href="#top">
+								<Link to="/faq">
 									<Button>FAQ</Button>
 								</Link>
-								<Link to="/contact" href="#top">
+								<Link to="/contact">
 									<Button>Contact</Button>
 								</Link>
 							</div>
@@ -95,7 +95,7 @@ function App() {
 							<div className="navicons">
 								<Link className="first" to="/works">
 									<IconButton>
-										<RiPaintBrushLine />
+										<MdExplore />
 									</IconButton>
 								</Link>
 								<Link to="/downloads">

@@ -16,7 +16,6 @@ import {
 	RiFileDownloadLine,
 	RiMailLine,
 	RiQuestionnaireLine,
-	RiArrowRightLine,
 } from "react-icons/ri";
 function Home() {
 	return (
