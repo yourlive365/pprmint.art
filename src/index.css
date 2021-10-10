@@ -16,11 +16,21 @@ body {
 @keyframes fadeBottom {
 	from {
 		opacity: 0;
-		transform: translateY(25px);
+		transform: translateY(30px);
 	}
 	to {
 		opacity: 1;
 		transform: translateY(0px);
+	}
+}
+@keyframes fadeLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
 	}
 }
 @keyframes cardImage {
@@ -56,18 +66,33 @@ header.MuiAppBar-root {
 .right {
 	float: right;
 }
-.navlinks {
-	float: right;
-	margin: none;
-	text-decoration: none !important;
-	margin: 11px 0;
+
+.nav h3 {
+	line-height: 3rem;
+	transition: all 0.1s ease-out;
+    color: #b3b3b3;
 }
-.navlink {
-	padding: 22px 12px;
+.nav h3:hover {
+	content: "←";
+	color: #ffffff;
+	transform: translateX(-10px);
+}
+.nav h3.active {
+	color: #ffffff;
+}
+.nav h3.active:hover {
+    transform: translateX(0px);
+}
+.nav h3.active::after {
+	content: "←";
+	color: #3dd17f;
+	margin-left: 10px;
+	transition: all 0.1s ease-out;
 }
 
 .wrapper {
-	min-height: calc(100vh - 60px);
+	padding-top: 150px;
+	min-height: calc(100vh - 82px);
 }
 
 .content {
@@ -75,11 +100,14 @@ header.MuiAppBar-root {
 	animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.15s forwards;
 }
 
+img {
+	-webkit-user-drag: none;
+	user-select: none;
+}
 img.header {
 	position: absolute;
 	animation: fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) 0.2s forwards;
 	opacity: 0;
-	user-select: none;
 }
 
 h1,
@@ -87,24 +115,7 @@ h2,
 h3 {
 	font-weight: 600 !important;
 	color: #ebebeb;
-}
-h1 {
-	opacity: 0;
-	animation: fadeBottom 0.5s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
-	padding-top: 150px;
-	padding-bottom: 40px;
 	hyphens: auto;
-}
-h1::after {
-	content: "";
-	display: block;
-	position: relative;
-	background: #3dd17f;
-	width: 0px;
-	height: 7px;
-	top: 10px;
-	margin: 0 auto;
-	animation: underlineDraw 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards;
 }
 h2 {
 	font-size: 2.125rem !important;
@@ -151,7 +162,11 @@ p a:hover {
 }
 
 .content {
-	padding-bottom: 50px;
+	padding: 50px 0;
+}
+
+.MuiButtonBase-root {
+	margin: 0 10px 10px 0 !important;
 }
 
 /* Rounded corners for video embeds for example. */
@@ -162,25 +177,35 @@ iframe {
 		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
-/* I don't know what this exactly does or was supposed to do. */
-.cardImage {
-	height: 163px;
-}
-
 /* As seen on the Home page */
 .MuiCard-root.primary {
 	padding: 10px;
 	border: 1px solid #ffffff00;
 	transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
-	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: 100px;
+	padding-bottom: 0;
 }
-.MuiCard-root.primary:hover {
-	border: 1px solid #ffffff11;
-	background-color: #151515;
-	transform: scale(1.02);
+.MuiCard-root.primary h2::after {
+	content: "→";
+	margin-left: 10px;
+	transition: 0.1s ease-out;
 }
-.MuiCard-root.primary:active {
-	transform: translateY(5px);
+.MuiCard-root.primary h2:hover::after {
+	margin-left: 15px;
+}
+.MuiCard-root.primary h2#discover::after {
+	color: #3dd17f;
+}
+.MuiCard-root.primary h2#downloads::after {
+	color: #256eff;
+}
+.MuiCard-root.primary h2#faq::after {
+	color: #e63946;
+}
+.MuiCard-root.primary h2#contact::after {
+	color: #f9c80e;
 }
 
 .DownloadCard img {
@@ -196,68 +221,16 @@ iframe {
 	transform: translateY(5px);
 }
 
-/* Rounded edges for cards. */
 .MuiPaper-rounded {
 	border-radius: 8px !important;
 }
 
-/* Buttons used on the aforementioned cards seen in the home page. */
-button.primary::before {
-	content: "-";
-	font-weight: bolder;
-	width: 0px;
-	transform: scaleX(0);
-	transition: 0.2s;
-}
-button.primary:hover::before {
-	width: 18px;
-	transform: scaleX(1);
+footer {
+	padding: 15px 20px;
 }
 
-/* Made obsolete in favor of nav bar. */
-/* footer {
-  background-color: #121212;
-  padding: 20px 20px 15px 20px;
-  height: 60px;
-} */
-
-/* ALL the things related to the top navigation bar. */
-
-.navlinks {
-	float: right;
-}
-.navlinks button {
-	padding: 9px 10px !important;
-}
-.navlinks a {
-	color: #b3b3b3;
-}
-.navlinks a.first {
-	color: #b3b3b3;
-}
-
-/* Only displayed at small sizes, i.e. phones. */
-.navicons {
-	display: none;
-}
-
-/* Declares which kinds of navigations are displayed at which size and makes headlines smaller. */
 @media only screen and (max-width: 599px) {
-	.navbuttons {
-		display: none;
-	}
-	.navicons {
-		display: block;
-	}
 	h1 {
 		font-size: 4.25rem !important;
-	}
-}
-@media only screen and (max-width: 400px) {
-	.navicons {
-		display: block;
-	}
-	.navicons button.MuiButtonBase-root {
-		padding: 10px 7px !important;
 	}
 }

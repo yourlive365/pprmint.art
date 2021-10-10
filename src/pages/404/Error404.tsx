@@ -17,9 +17,8 @@ function FourOhFour() {
 					content="This page was not fo- wait hang on, you shouldn't be seeing this if you're on Google or something. "
 				/>
 			</Helmet>
-			<img className="header" src="./assets/blobs/404_header_blob.svg" />
 			<Container className="wrapper">
-				<Typography variant="h1" align="center">
+				<Typography variant="h1">
 					Who's the culprit?
 				</Typography>
 				<div className="content">
@@ -40,9 +39,6 @@ function FourOhFour() {
 							<Typography variant="body1">
 								Either you misspelled the address, or the page doesn't exist
 								anymore.
-								<br />
-								You can try one of the buttons at the top right, or just go back
-								home.
 							</Typography>
 							<br />
 							<Link to="/">
