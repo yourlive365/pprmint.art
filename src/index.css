@@ -15,8 +15,8 @@ html {
 	--yellowPrimary: #fb2;
 	--yellowSecondary: #d92;
 	--textPrimary: #bbb;
-	--testSecondary: #eee;
-	--testTertiary: #fff;
+	--textSecondary: #eee;
+	--textTertiary: #fff;
 	--backgroundPrimary: #111;
 	--backgroundSecondary: #222;
 	--backgroundTertiary: #333;
@@ -72,7 +72,7 @@ html {
 	content: none;
 }
 .nav a h3:hover {
-	color: var(--testSecondary) !important;
+	color: var(--textSecondary) !important;
 }
 
 img {
@@ -97,7 +97,7 @@ img {
 a {
 	text-decoration: none !important;
 	outline: none;
-	color: var(--testSecondary);
+	color: var(--textSecondary);
 	transition: background-color 0.15s;
 }
 p a:focus-visible {
@@ -140,6 +140,10 @@ a.external h3:hover::after {
 
 .content {
 	padding: 25px 0 50px 0;
+}
+
+.MuiCircularProgress-root {
+    color: var(--textSecondary) !important;
 }
 
 /* Standard paddings on cards suck. */
