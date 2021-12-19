@@ -1,115 +1,80 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Button, Typography, Grid, Container } from "@material-ui/core";
-import {
-  RiDiscordLine,
-  RiMailLine,
-  RiTwitterLine,
-  RiYoutubeLine,
-} from "react-icons/ri";
+import { Button, Typography, Grid, Container, Alert } from "@mui/material";
+import { RiInformationLine, RiMailLine, RiTwitterLine } from "react-icons/ri";
 
 function Contact() {
-  return (
-    <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>pprmint.de – Contact and social media.</title>
-        <meta
-          name="description"
-          content="Click on buttons to get to my social media profiles, send me an email or join my Discord server. Yeah I have one of those as well, but seeing how often I mention it you wouldn't be surprised just how active it really is."
-        />
-      </Helmet>
-      <img className="header" src="./assets/blobs/contact_header_blob.svg" />
-      <Container className="wrapper">
-        <Typography variant="h1" align="center">
-          Contact & social media.
-        </Typography>
-        <div className="content">
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h2">Email.</Typography>
-              <Typography variant="body1">
-                The classic. Use this if you don't want to create an account on
-                any of the social media platforms I'm using myself, or if it's
-                something more formal you'd like to talk about. Keep in mind
-                that I have a spam folder here as well.
-              </Typography>
-              <br />
-              <a
-                href="mailto:mail@pprmint.de?subject=I'll%20gladly%20ignore%20any%20ads%20or%20offers%20you%20might%20have%20for%20me."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outlined" startIcon={<RiMailLine />}>
-                  Send mail
-                </Button>
-              </a>
-            </Grid>
+	return (
+		<>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>pprmint.de – Contact.</title>
+				<meta
+					name="description"
+					content="Click on buttons to send me an email or direct message on Twitter."
+				/>
+			</Helmet>
+			<div className="title">
+				<Typography variant="h1">Get in touch.</Typography>
+				<Typography variant="h2">I don't bite. Not necessarily.</Typography>
+			</div>
+			<div className="content">
+				<Alert
+					severity="info"
+					variant="filled"
+					icon={<RiInformationLine />}
+					action={
+						<Link to="/faq">
+							<Button size="small" color="inherit">
+								Open FAQ
+							</Button>
+						</Link>
+					}
+				>
+					Before you ask any questions, check whether the FAQ already anwers it.
+				</Alert>
+				<br />
+				<Grid container spacing={4}>
+					<Grid item xs={12} sm={6}>
+						<Typography variant="h2">Email.</Typography>
+						<Typography variant="body1">
+							The classic. If you don't have a Twitter account, or don't wanna
+							get too personal with me, send me an email.
+						</Typography>
+						<br />
+						<Button
+							href="mailto:mail@pprmint.de?subject=I'll%20gladly%20ignore%20any%20ads%20or%20offers%20you%20might%20have%20for%20me."
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="contained"
+							startIcon={<RiMailLine />}
+						>
+							Send email
+						</Button>
+					</Grid>
 
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h2">Twitter.</Typography>
-              <Typography variant="body1">
-                Direct messages are open if you're up for a quick chat or have a
-                general question. On there I also like to occasionally post
-                updates on my projects, if you're ever wondering why I'm not
-                uploading much on YouTube for example.
-              </Typography>
-              <br />
-              <a
-                href="https://twitter.com/npprmint"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outlined" startIcon={<RiTwitterLine />}>
-                  Open profile
-                </Button>
-              </a>
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h2">YouTube.</Typography>
-              <Typography variant="body1">
-                Remember what I said about YouTube a jiffy ago? Well, this is
-                where most of my animated works and videos end up, all striving
-                to reach their destiny: Overtaking the Wii Disc Channel in
-                views. There will be a party for sure.
-              </Typography>
-              <br />
-              <a
-                href="https://www.youtube.com/c/pprmint"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outlined" startIcon={<RiYoutubeLine />}>
-                  Open channel
-                </Button>
-              </a>
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h2">Discord.</Typography>
-              <Typography variant="body1">
-                The thing with my server is: I put so much effort into it, even
-                created a custom sub domain redirecting to the invite link, yet
-                I barely put any effort into bringing activity in there. So, if
-                you like inactive servers, this is the place to go.
-              </Typography>
-              <br />
-              <a
-                href="https://discord.gg/Vw9JXwr"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outlined" startIcon={<RiDiscordLine />}>
-                  Join server
-                </Button>
-              </a>
-            </Grid>
-          </Grid>
-        </div>
-      </Container>
-    </>
-  );
+					<Grid item xs={12} sm={6}>
+						<Typography variant="h2">Twitter.</Typography>
+						<Typography variant="body1">
+							Direct messages are open if you're up for a quick chat or have a
+							general question.
+						</Typography>
+						<br />
+						<Button
+							href="https://twitter.com/messages/compose?recipient_id=1296863056266502144"
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="contained"
+							startIcon={<RiTwitterLine />}
+						>
+							Send a DM
+						</Button>
+					</Grid>
+				</Grid>
+			</div>
+		</>
+	);
 }
 
 export default Contact;

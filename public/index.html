@@ -9,82 +9,138 @@
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href="/apple-touch-icon.png?v=dual"
+			href="/apple-touch-icon.png?v=2022"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="/favicon-32x32.png?v=dual"
+			href="/favicon-32x32.png?v=2022"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href="/favicon-16x16.png?v=dual"
+			href="/favicon-16x16.png?v=2022"
 		/>
-		<link rel="manifest" href="/site.webmanifest?v=dual" />
-		<link
-			rel="mask-icon"
-			href="/safari-pinned-tab.svg?v=dual"
-			color="#3dd17f"
-		/>
-		<link rel="shortcut icon" href="/favicon.ico?v=dual" />
-		<meta name="msapplication-TileColor" content="#3dd17f" />
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=dual" />
-		<meta name="theme-color" content="#3dd17f" />
+		<link rel="manifest" href="/site.webmanifest?v=2022" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg?v=2022" color="#0C6" />
+		<link rel="shortcut icon" href="/favicon.ico?v=2022" />
+		<meta name="msapplication-TileColor" content="#0C6" />
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=2022" />
+		<meta name="theme-color" content="#0C6" />
 		<meta
 			name="description"
-			content="I move pixels around. Sometimes they look good."
+			content="I make things look neat with vector points, keyframes, and monospace letters."
 		/>
 
 		<meta
 			property="og:image"
-			content="https://pprmint.de/assets/og-images/og.jpg?v=dual"
+			content="https://pprmint.de/og.jpg?v=2022"
 		/>
 		<meta property="og:image:width" content="1600" />
 		<meta property="og:image:height" content="838" />
 		<meta property="og:title" content="pprmint.de" />
 		<meta
 			property="og:description"
-			content="I move pixels around. Sometimes they look good."
+			content="I make things look neat with vector points, keyframes, and monospace letters."
 		/>
 		<meta property="og:url" content="https://pprmint.de" />
 
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-		<title>pprmint.de</title>
+		<title>pprmint.de – Good today.</title>
 	</head>
 
 	<body>
 		<noscript>
 			<style>
 				@import url(./assets/fonts/archia.css);
+				@import url(./assets/fonts/basiersquare.css);
+
+				@keyframes fadeBottom {
+					from {
+						opacity: 0;
+						transform: translateY(30px);
+					}
+
+					to {
+						opacity: 1;
+						transform: translateY(0px);
+					}
+				}
+
 				body {
+					font-family: "Basier Square", "Roboto", Helvetica, Arial, sans-serif;
+					background-color: #111;
+					color: #bbb;
+				}
+				h1 {
 					font-family: "Archia", "Roboto", Helvetica, Arial, sans-serif;
-					background-color: #0a0a0a;
-					color: white;
+					font-weight: 500;
+					font-size: 2.25rem;
+					color: #eee;
+				}
+				p {
+					animation: fadeBottom 0.375s cubic-bezier(0.0, 0, 0.2, 1) 0.12s forwards;
+					opacity: 0;
+					font-size: 1rem;
+					line-height: 1.5;
+				}
+				a {
+					text-decoration: none !important;
+					outline: none;
+					color: #eee;
+					transition: background-color 0.15s;
+				}
+				a:focus-visible {
+					background-color: rgba(255, 255, 255, 0.12);
 				}
 			</style>
-			<div
-				class="content"
-				style="position: relative; max-width: 700px; margin: 15% auto 0"
-			>
-				<h1>JavaScript seems to be disabled.</h1>
-				<p>
-					Since this website was built using React, you will need to enable
-					JavaScript for the <i><b>ULTIMATE!!!!!</b></i> experience.<br />
-					If you don't trust me or JavaScript, feel free to check out the
+			<div style="position: relative; max-width: 700px; margin: 15% auto 0">
+				<div
+					style="
+						opacity: 0;
+						animation: fadeBottom 0.375s cubic-bezier(0.0, 0, 0.2, 1) 0.1s
+							forwards;
+					"
+				>
+					<img
+						src="/nojs.svg"
+						height="40px"
+						alt="No JavaScript"
+						style="float: left; align-self: baseline;"
+					/>
+					<h1 style="float: left; margin: 0 0 15px 10px;">
+						JavaScript seems to be disabled.
+					</h1>
+				</div>
+				<p style="clear: left">
+					Sorry, but you won't get far around here without JavaScript. Either
+					your browser is too old, or some of your privacy settings have blocked
+					it. Check your browser or extension settings.<br />
+					Alternatively, you can look at the source code directly on my
 					<b
 						><a
 							href="https://github.com/pprmint/pprmint.de"
-							style="color: white"
 							target="_blank"
 							rel="noopener noreferrer"
-							>repository on GitHub</a
+							>GitHub repo</a
 						></b
-					>.
+					>
+					.
 				</p>
+				<img
+					src="/wordmark.svg"
+					height="30px"
+					alt="pprmint."
+					style="
+						margin-top: 5px;
+						opacity: 0;
+						animation: fadeBottom 0.375s cubic-bezier(0.0, 0, 0.2, 1) 0.14s
+							forwards;
+					"
+				/>
 			</div>
 		</noscript>
 		<div id="root"></div>

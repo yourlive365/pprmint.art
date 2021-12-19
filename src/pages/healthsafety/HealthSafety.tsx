@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link, Typography, Container } from "@material-ui/core";
+import { Link, Typography, Container } from "@mui/material";
 import Image from "material-ui-image";
 
 import Popup from "./popup.png";

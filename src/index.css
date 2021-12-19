@@ -1,148 +1,125 @@
-html,
-body {
-	background-color: #0a0a0a;
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	margin-top: 150px;
 }
 
-@keyframes fadeTop {
-	from {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0px);
-	}
+:root {
+    /* Main color palette */
+	--greenPrimary: #0c6;
+	--greenSecondary: #095;
+	--redPrimary: #f34;
+	--redSecondary: #b23;
+	--bluePrimary: #19f;
+	--blueSecondary: #17c;
+	--yellowPrimary: #fb2;
+	--yellowSecondary: #d92;
+	--textPrimary: #bbb;
+	--testSecondary: #eee;
+	--testTertiary: #fff;
+	--backgroundPrimary: #111;
+	--backgroundSecondary: #222;
+	--backgroundTertiary: #333;
+    /* Easing */
+    --easeOut: cubic-bezier(0.0, 0, 0.2, 1);
 }
+
+/* Scrollbars */
+::-webkit-scrollbar {
+	width: 16px;
+}
+::-webkit-scrollbar-track {
+	background: var(--backgroundPrimary);
+	border-radius: 8px;
+	border: 4px solid var(--backgroundPrimary);
+}
+::-webkit-scrollbar-thumb {
+	background: #202020;
+	border-radius: 8px;
+	border: 4px solid var(--backgroundPrimary);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--backgroundTertiary);
+}
+
+/* Text selection */
+::selection {
+	color: var(--backgroundPrimary);
+	background: var(--greenPrimary);
+}
+
 @keyframes fadeBottom {
 	from {
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(20px);
 	}
 	to {
 		opacity: 1;
 		transform: translateY(0px);
 	}
 }
-@keyframes fadeLeft {
-	from {
-		opacity: 0;
-		transform: translateX(-30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-@keyframes cardImage {
-	from {
-		opacity: 1;
-		transform: translateX(30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-@keyframes underlineDraw {
-	from {
-		width: 0px;
-		opacity: 0;
-	}
-	to {
-		width: 100px;
-		opacity: 1;
-	}
-}
 
-header.MuiAppBar-root {
-	height: 64px;
-	background-color: #151515bb !important;
-	backdrop-filter: blur(15px);
+.nav {
+	clear: right;
 }
-
-.left {
-	float: left;
-}
-.right {
-	float: right;
-}
-
-.nav h3 {
-	line-height: 3rem;
+.nav a h3 {
+	animation: fadeBottom 0.375s var(--easeOut) forwards;
 	transition: all 0.1s ease-out;
-    color: #b3b3b3;
-}
-.nav h3:hover {
-	content: "←";
-	color: #ffffff;
-	transform: translateX(-10px);
-}
-.nav h3.active {
-	color: #ffffff;
-}
-.nav h3.active:hover {
-    transform: translateX(0px);
-}
-.nav h3.active::after {
-	content: "←";
-	color: #3dd17f;
-	margin-left: 10px;
-	transition: all 0.1s ease-out;
-}
-
-.wrapper {
-	padding-top: 150px;
-	min-height: calc(100vh - 82px);
-}
-
-.content {
+	color: var(--textPrimary) !important;
 	opacity: 0;
-	animation: fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.15s forwards;
+}
+.nav a h3::after {
+	content: none;
+}
+.nav a h3:hover {
+	color: var(--testSecondary) !important;
 }
 
 img {
 	-webkit-user-drag: none;
 	user-select: none;
 }
-img.header {
-	position: absolute;
-	animation: fadeTop 1s cubic-bezier(0, 0.7, 0.5, 1) 0.2s forwards;
+
+.title h1,
+.title .MuiCard-root {
+	animation: fadeBottom 0.375s var(--easeOut) 0.04s forwards;
 	opacity: 0;
 }
-
-h1,
-h2,
-h3 {
-	font-weight: 600 !important;
-	color: #ebebeb;
-	hyphens: auto;
+.title h2 {
+	animation: fadeBottom 0.375s var(--easeOut) 0.08s forwards;
+	opacity: 0;
 }
-h2 {
-	font-size: 2.125rem !important;
-	line-height: 1.235 !important;
-	padding-bottom: 15px;
-}
-h3 {
-	font-size: 1.5rem !important;
+.content {
+	opacity: 0;
+	animation: fadeBottom 0.375s var(--easeOut) 0.12s forwards;
 }
 
-p {
-	color: #b3b3b3;
-}
 a {
 	text-decoration: none !important;
 	outline: none;
+	color: var(--testSecondary);
+    transition: background-color .15s;
 }
-p a {
-	color: #fff !important;
-	text-decoration: none;
-	transition: 0.2s;
-	border-bottom: 0px solid #ffffff00;
+a:focus-visible {
+	background-color: rgba(255, 255, 255, 0.12);
 }
-p a:hover {
-	transition: 0.2s;
-	border-bottom: 1px solid #ffffff;
+p a.external::after,
+a.external h2::after,
+a.external h3::after {
+	content: "↗";
+	transition: all 0.15s;
+	position: relative;
+	top: 0.2rem;
+	left: 0.2rem;
+	padding-right: 0.55rem;
 }
+p a.external:hover::after,
+a.external h2:hover::after,
+a.external h3:hover::after {
+	top: 0rem;
+	left: 0.4rem;
+}
+
 .MuiListItemText-root a {
 	color: #fff !important;
 	text-decoration: none;
@@ -162,71 +139,31 @@ p a:hover {
 }
 
 .content {
-	padding: 50px 0;
+	padding: 25px 0 50px 0;
 }
 
-.MuiButtonBase-root {
-	margin: 0 10px 10px 0 !important;
+/* Standard paddings on cards suck. */
+.MuiCardContent-root {
+	padding: 16px 24px 16px 24px;
+}
+.MuiCardActions-root {
+	padding: 0 16px 16px 16px;
+}
+.MuiAccordionSummary-root {
+    padding: 4px 24px;
+}
+.MuiAccordionDetails-root {
+    padding: 8px 24px 24px;
 }
 
-/* Rounded corners for video embeds for example. */
-iframe {
-	border: none;
-	border-radius: 4px;
-	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+/* Show a little divider line when nav is put on top of main content */
+.nav hr {
+	display: none;
 }
-
-/* As seen on the Home page */
-.MuiCard-root.primary {
-	padding: 10px;
-	border: 1px solid #ffffff00;
-	transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	background-size: 100px;
-	padding-bottom: 0;
-}
-.MuiCard-root.primary h2::after {
-	content: "→";
-	margin-left: 10px;
-	transition: 0.1s ease-out;
-}
-.MuiCard-root.primary h2:hover::after {
-	margin-left: 15px;
-}
-.MuiCard-root.primary h2#discover::after {
-	color: #3dd17f;
-}
-.MuiCard-root.primary h2#downloads::after {
-	color: #256eff;
-}
-.MuiCard-root.primary h2#faq::after {
-	color: #e63946;
-}
-.MuiCard-root.primary h2#contact::after {
-	color: #f9c80e;
-}
-
-.DownloadCard img {
-	border: 1px solid #ffffff00;
-	transition: all 0.2s cubic-bezier(0, 0.7, 0.5, 1);
-	cursor: pointer;
-}
-.DownloadCard img:hover {
-	border: 1px solid #ffffff11 !important;
-	transform: scale(1.02);
-}
-.DownloadCard img:active {
-	transform: translateY(5px);
-}
-
-.MuiPaper-rounded {
-	border-radius: 8px !important;
-}
-
-footer {
-	padding: 15px 20px;
+@media only screen and (max-width: 1199px) {
+	.nav hr {
+		display: block;
+	}
 }
 
 @media only screen and (max-width: 599px) {

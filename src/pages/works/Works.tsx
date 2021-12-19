@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Typography, Grid, Button, Container, Link } from "@material-ui/core";
+import { Typography, Grid, Button, Container, Link } from "@mui/material";
 import Image from "material-ui-image";
 
 import WiiMenuPreview from "./assets/wip/wii_menu.png";
@@ -73,12 +73,10 @@ function WorkCardImage(props: WorkCardImageProps) {
             <div className="right">
                 <Button
                     variant="text"
-                    color="default"
                     style={{ marginTop: "8px" }}
                     href={props.link}
                     target="_blank"
-                    rel="noopener noreferrer"
-                >
+                    rel="noopener noreferrer">
                     {props.buttonText}
                 </Button>
             </div>
@@ -110,12 +108,10 @@ function WorkCardVideo(props: WorkCardVideoProps) {
             <div className="right">
                 <Button
                     variant="text"
-                    color="default"
                     style={{ marginTop: "8px" }}
                     href={props.link}
                     target="_blank"
-                    rel="noopener noreferrer"
-                >
+                    rel="noopener noreferrer">
                     {props.buttonText}
                 </Button>
             </div>
