@@ -5,7 +5,7 @@ html {
 }
 
 :root {
-    /* Main color palette */
+	/* Main color palette */
 	--greenPrimary: #0c6;
 	--greenSecondary: #095;
 	--redPrimary: #f34;
@@ -20,8 +20,8 @@ html {
 	--backgroundPrimary: #111;
 	--backgroundSecondary: #222;
 	--backgroundTertiary: #333;
-    /* Easing */
-    --easeOut: cubic-bezier(0.0, 0, 0.2, 1);
+	/* Easing */
+	--easeOut: cubic-bezier(0, 0, 0.2, 1);
 }
 
 /* Scrollbars */
@@ -98,9 +98,9 @@ a {
 	text-decoration: none !important;
 	outline: none;
 	color: var(--testSecondary);
-    transition: background-color .15s;
+	transition: background-color 0.15s;
 }
-a:focus-visible {
+p a:focus-visible {
 	background-color: rgba(255, 255, 255, 0.12);
 }
 p a.external::after,
@@ -150,10 +150,10 @@ a.external h3:hover::after {
 	padding: 0 16px 16px 16px;
 }
 .MuiAccordionSummary-root {
-    padding: 4px 24px;
+	padding: 4px 24px;
 }
 .MuiAccordionDetails-root {
-    padding: 8px 24px 24px;
+	padding: 8px 24px 24px;
 }
 
 /* Show a little divider line when nav is put on top of main content */
