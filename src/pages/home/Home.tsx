@@ -13,6 +13,83 @@ import Image from "material-ui-image";
 
 import NewsMintcraft from "./assets/mintcraft.svg";
 import NewsMuiFive from "./assets/mui5.svg";
+import NewsLayout from "./assets/layout.svg";
+
+function AnnouncementCard(props: {
+	imageSrc: string;
+	imageAlt: string;
+	date: string;
+	headline: string;
+	strongText: string;
+	text: string;
+}) {
+	return (
+		<Card variant="outlined">
+			<CardContent>
+				<Grid container spacing={2}>
+					<Grid item xs={12} md={8}>
+						<Typography variant="subtitle1">{props.date}</Typography>
+						<Typography variant="h2">{props.headline}</Typography>
+						<Typography variant="body1">
+							<strong>{props.strongText}</strong>
+							<br />
+							{props.text}
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<Image
+							src={props.imageSrc}
+							width="100%"
+							alt={props.imageAlt}
+							aspectRatio={16 / 9}
+							color="transparent"
+						/>
+					</Grid>
+				</Grid>
+			</CardContent>
+		</Card>
+	);
+}
+
+function ActionsAnnouncementCard(
+	props: React.PropsWithChildren<{
+		imageSrc: string;
+		imageAlt: string;
+		date: string;
+		headline: string;
+		strongText: string;
+		text: string;
+	}>
+) {
+	return (
+		<Card variant="outlined">
+			<CardContent>
+				<Grid container spacing={2}>
+					<Grid item xs={12} md={8}>
+						<Typography variant="subtitle1">{props.date}</Typography>
+						<Typography variant="h2">{props.headline}</Typography>
+						<Typography variant="body1">
+							<strong>{props.strongText}</strong>
+							<br />
+							{props.text}
+						</Typography>
+						<br />
+						{props.children}
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<Image
+							src={props.imageSrc}
+							width="100%"
+							alt={props.imageAlt}
+							aspectRatio={16 / 9}
+							color="transparent"
+						/>
+					</Grid>
+				</Grid>
+			</CardContent>
+		</Card>
+	);
+}
 
 function Home() {
 	return (
@@ -36,84 +113,51 @@ function Home() {
 			<div className="content">
 				<Typography variant="h2">Here's what's new:</Typography>
 				<br />
-				<Card variant="outlined">
-					<CardContent>
-						<Grid container>
-							<Grid item xs={12} sm={8}>
-								<Typography variant="subtitle1">19. Dec. 2021</Typography>
-								<Typography variant="h2">
-									Mintcraft version 1.4 released.
-								</Typography>
-								<Typography variant="body1">
-									<strong>
-										The new version of my resource pack now supports the 1.18
-										Caves & Cliffs update.
-									</strong>
-									<br />
-									It features new icons, a slightly updated color scheme, some
-									tweaked icons (they move now), and a new add-on that changes
-									the button click sound.
-								</Typography>
-								<br />
-								<Link to="/projects/mintcraft">
-									<Button variant="contained" color="warning">
-										Tell me more
-									</Button>
-								</Link>
-							</Grid>
-							<Grid item xs={12} sm={4}>
-								<Image
-									src={NewsMintcraft}
-									width="100%"
-									alt="Mintcraft "
-									aspectRatio={16 / 9}
-									color="transparent"
-								/>
-							</Grid>
-						</Grid>
-					</CardContent>
-				</Card>
+				<AnnouncementCard
+					imageSrc={NewsLayout}
+					imageAlt="Outlines of desktop and mobile website"
+					date="14. Jan. 2022"
+					headline="Layout changes and fancier code."
+					strongText="If you only believe what you see with your own eyes, this update is for you."
+					text="Content on desktop is now properly centered, left and right margins
+                    on mobile have been decreased and hovering over text links makes you want
+                    to do so for the rest of your life. I also rewrote some parts of the
+                    website and implemented components."
+				/>
 				<br />
-				<Card variant="outlined">
-					<CardContent>
-						<Grid container>
-							<Grid item xs={12} sm={8}>
-								<Typography variant="subtitle1">19. Dec. 2021</Typography>
-								<Typography variant="h2">
-									This website got quite the upgrade.
-								</Typography>
-								<Typography variant="body1">
-									If you have eyes, chances are you've already noticed that
-									something was off. I migrated to version 5 of{" "}
-									<a
-										href="https://mui.com/"
-										className="external"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										MUI
-									</a>{" "}
-									(fka. Material-UI), which brought a variety of new features.
-									While I was at it, I also took the time to further explore the
-									capabilities of MUI, as well as restructuring this site.
-									<br />
-									Because of the quite substantial changes, there might still be
-									some rough edges here and there. If you notice any, please get
-									in touch with me.
-								</Typography>
-							</Grid>
-							<Grid item xs={12} sm={4}>
-								<Image
-									src={NewsMuiFive}
-									width="100%"
-									alt="Ice cream at a crime scene."
-									aspectRatio={16 / 9}
-									color="transparent"
-								/>
-							</Grid>
-						</Grid>
-					</CardContent>
-				</Card>
+				<ActionsAnnouncementCard
+					imageSrc={NewsMintcraft}
+					imageAlt="Outlines of desktop and mobile website"
+					date="19. Dec. 2021"
+					headline="Mintcraft version 1.4 released."
+					strongText="The new version of my resource pack now supports the 1.18
+                    Caves & Cliffs update."
+					text="It features new icons, a slightly updated color scheme, some
+                    tweaked icons (they move now), and a new add-on that changes
+                    the button click sound."
+					children={
+						<Link to="/projects/mintcraft">
+							<Button variant="contained" color="warning">
+								Tell me more
+							</Button>
+						</Link>
+					}
+				/>
+				<br />
+				<AnnouncementCard
+					imageSrc={NewsMuiFive}
+					imageAlt="Outlines of desktop and mobile website"
+					date="19. Dec. 2021"
+					headline="This website got quite the upgrade."
+					strongText="If you have eyes, chances are you've already noticed that something was off."
+					text="I migrated to version 5 of MUI
+                    (fka. Material-UI), which brought a variety of new features.
+                    While I was at it, I also took the time to further explore the
+                    capabilities of MUI, as well as restructuring this site.
+                    Because of the quite substantial changes, there might still be
+                    some rough edges here and there. If you notice any, please get
+                    in touch with me."
+				/>
 				<br />
 			</div>
 		</>

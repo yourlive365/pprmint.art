@@ -22,6 +22,10 @@ html {
 	--backgroundTertiary: #333;
 	/* Easing */
 	--easeOut: cubic-bezier(0, 0, 0.2, 1);
+    /* Inset box shadow offsets */
+    --boxInsetBody: -1.3rem;
+    --boxInsetH2: -2.65rem;
+    --boxInsetH3: -2rem;
 }
 
 /* Scrollbars */
@@ -68,9 +72,6 @@ html {
 	color: var(--textPrimary) !important;
 	opacity: 0;
 }
-.nav a h3::after {
-	content: none;
-}
 .nav a h3:hover {
 	color: var(--textSecondary) !important;
 }
@@ -94,41 +95,89 @@ img {
 	animation: fadeBottom 0.375s var(--easeOut) 0.12s forwards;
 }
 
+/* General styles for links */
 a {
 	text-decoration: none !important;
 	outline: none;
 	color: var(--textSecondary);
 	transition: background-color 0.15s;
 }
-p a:focus-visible {
+/* General styles for links when tabbing through them */
+p a:focus-visible,
+h2 a:focus-visible,
+h3 a:focus-visible {
 	background-color: rgba(255, 255, 255, 0.12);
 }
+
+/* Underline for text links */
+p a,
+h2 a,
+h3 a {
+    transition: all 0.15s;
+	box-shadow: inset 0 -1px 0 #ffffff55;
+	margin: 0 0.3rem;
+	padding: 0;
+}
+/* General properties for hovering over internal links */
+p a:hover,
+h2 a:hover,
+h3 a:hover {
+    color: var(--backgroundPrimary);
+	border-radius: 4px;
+	margin: 0;
+	padding: 0 0.3rem;
+}
+/* Specific inset positions for each text size needed */
+p a:hover {
+    box-shadow: inset 0 var(--boxInsetBody) 0 var(--greenPrimary);
+}
+h2 a:hover {
+    box-shadow: inset 0 var(--boxInsetH2) 0 var(--greenPrimary);
+}
+h3 a:hover {
+    box-shadow: inset 0 var(--boxInsetH3) 0 var(--greenPrimary);
+}
+/* Special underline for external links */
+p a.external,
+h2 a.external,
+h3 a.external {
+    position: relative;
+	margin: 0 0.5rem 0 0.3rem;
+	padding: 0;
+}
+/* General properties for hovering over external links */
+p a.external:hover,
+h2 a.external:hover,
+h3 a.external:hover {
+	margin: 0;
+	padding: 0 0.5rem 0 0.3rem;
+}
+/* That arrow */
 p a.external::after,
-a.external h2::after,
-a.external h3::after {
+h2 a.external::after,
+h3 a.external::after {
 	content: "↗";
+	color: var(--bluePrimary);
 	transition: all 0.15s;
 	position: relative;
 	top: 0.2rem;
 	left: 0.2rem;
-	padding-right: 0.55rem;
+	margin-right: 0.2rem;
 }
-p a.external:hover::after,
-a.external h2:hover::after,
-a.external h3:hover::after {
+a.external:hover::after {
+    color: var(--backgroundPrimary);
 	top: 0rem;
-	left: 0.4rem;
+	left: 0.45rem;
 }
-
-.MuiListItemText-root a {
-	color: #fff !important;
-	text-decoration: none;
-	transition: 0.2s;
-	border-bottom: 0px solid #ffffff00;
+/* Specific inset positions for each text size needed */
+p a.external:hover {
+    box-shadow: inset 0 var(--boxInsetBody) 0 var(--bluePrimary);
 }
-.MuiListItemText-root a:hover {
-	transition: 0.2s;
-	border-bottom: 1px solid #ffffff;
+h2 a.external:hover {
+    box-shadow: inset 0 var(--boxInsetH2) 0 var(--bluePrimary);
+}
+h3 a.external:hover {
+    box-shadow: inset 0 var(--boxInsetH3) 0 var(--bluePrimary);
 }
 
 .MuiListItemIcon-root {
@@ -143,7 +192,7 @@ a.external h3:hover::after {
 }
 
 .MuiCircularProgress-root {
-    color: var(--textSecondary) !important;
+	color: var(--textSecondary) !important;
 }
 
 /* Standard paddings on cards suck. */

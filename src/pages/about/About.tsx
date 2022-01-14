@@ -13,7 +13,7 @@ function About() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Contact and social media.</title>
+				<title>pprmint.de – About.</title>
 				<meta
 					name="description"
 					content="Learn more about that one German weeb that also makes design-related things from time to time."
@@ -26,8 +26,7 @@ function About() {
 			<div className="content">
 				<Typography variant="h2">General.</Typography>
 				<Typography variant="body1">
-					I'll give you more infos about how to stalk me at a later date. For
-					now, know that I'm German and that I like design, music and anime.
+					Nope, still didn't get around to work on this page.
 				</Typography>
 			</div>
 		</>

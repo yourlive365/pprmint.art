@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	Redirect,
+} from "react-router-dom";
 import {
 	ThemeProvider,
 	Theme,
@@ -11,6 +17,10 @@ import {
 	Typography,
 	IconButton,
 	Divider,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
 } from "@mui/material";
 
 // Imports of all the pages
@@ -22,7 +32,6 @@ import MintBitDL from "./pages/projects/mintbit/MintBit";
 import MintAltDL from "./pages/projects/mintalternative/MintAlt";
 import MintcraftDL from "./pages/projects/mintcraft/Mintcraft";
 import Win10TilesDL from "./pages/projects/win10tiles/WinTiles";
-import Faq from "./pages/faq/FAQ";
 import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/404/Error404";
 
@@ -38,17 +47,43 @@ import {
 	RiYoutubeLine,
 } from "react-icons/ri";
 
+function NavLink(props: { to: string; text: string; delay: string }) {
+	return (
+		<Link to={props.to}>
+			<Typography
+				variant="h3"
+				align="right"
+				style={{ animationDelay: props.delay }}
+			>
+				{props.text}
+			</Typography>
+		</Link>
+	);
+}
+
+function IconLink(props: React.PropsWithChildren<{ href: string }>) {
+	return (
+		<IconButton
+			href={props.href}
+			target="_blank"
+			rel="noopener noreferrer"
+			size="large"
+			sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
+		>
+			{props.children}
+		</IconButton>
+	);
+}
+
 const theme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
 			main: "#0C6",
-			dark: "#295",
 			contrastText: "#111",
 		},
 		secondary: {
 			main: "#19F",
-			dark: "#17C",
 			contrastText: "#111",
 		},
 		background: {
@@ -61,22 +96,18 @@ const theme = createTheme({
 		},
 		error: {
 			main: "#F34",
-			dark: "#B23",
 			contrastText: "#111",
 		},
 		warning: {
 			main: "#FB2",
-			dark: "#D92",
 			contrastText: "#111",
 		},
 		info: {
 			main: "#19F",
-			dark: "#17B",
 			contrastText: "#111",
 		},
 		success: {
 			main: "#0C6",
-			dark: "#095",
 			contrastText: "#111",
 		},
 	},
@@ -88,26 +119,30 @@ const theme = createTheme({
 			color: "#EEE",
 			fontWeight: 600,
 			lineHeight: 1.2,
+			textAlign: "left",
 		},
 		h2: {
 			color: "#EEE",
 			fontSize: "2.1rem",
 			fontWeight: 600,
 			lineHeight: 1.5,
+			textAlign: "left",
 		},
 		h3: {
 			color: "#EEE",
 			fontSize: "1.5rem",
 			fontWeight: 600,
 			lineHeight: 1.5,
+			textAlign: "left",
 		},
 		body1: {
 			color: "#BBB",
 			lineHeight: 1.5,
+			textAlign: "justify",
 		},
 	},
 	shape: {
-		borderRadius: 7,
+		borderRadius: 4,
 	},
 });
 
@@ -115,118 +150,96 @@ function App() {
 	return (
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={theme}>
-				<Container maxWidth="xl">
-					<CssBaseline />
-					<Router>
-						<Grid container style={{ minHeight: "calc(100vh - 212px)" }}>
-							<Grid item xs={12} lg={2} style={{ padding: "20px 30px" }}>
-								<Link
-									to="/"
-									style={{
-										float: "right",
-										animation:
-											"fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards",
-										opacity: "0",
-									}}
-								>
-									<img src={Wordmark} height="30px" alt="pprmint." />
-								</Link>
-								<div className="nav">
-									<Link to="/">
-										<Typography
-											variant="h3"
-											align="right"
-											style={{ animationDelay: "0.12s" }}
-										>
-											Home
-										</Typography>
-									</Link>
-									<Link to="/about">
-										<Typography
-											variant="h3"
-											align="right"
-											style={{ animationDelay: "0.14s" }}
-										>
-											About
-										</Typography>
-									</Link>
-									<Link to="/projects">
-										<Typography
-											variant="h3"
-											align="right"
-											style={{ animationDelay: "0.16s" }}
-										>
-											Projects
-										</Typography>
-									</Link>
-									<Link to="/contact">
-										<Typography
-											variant="h3"
-											align="right"
-											style={{ animationDelay: "0.18s" }}
-										>
-											Contact
-										</Typography>
-									</Link>
-									<Link to="/faq">
-										<Typography
-											variant="h3"
-											align="right"
-											style={{ animationDelay: "0.2s" }}
-										>
-											FAQ
-										</Typography>
-									</Link>
-									<br />
-									<Divider />
-								</div>
-							</Grid>
-							<Grid item xs={12} lg={10} sx={{ padding: "0 30px" }}>
-								{/* All the different pages that exist here, pretty much. */}
-								<Switch>
-									<Route path={"/"} exact>
-										<Home />
-									</Route>
-									<Route path={"/about"} exact>
-										<About />
-									</Route>
-									<Route path={"/projects"} exact>
-										<Projects />
-									</Route>
-									<Route path={"/projects/mintsans"} exact>
-										<MintSansDL />
-									</Route>
-									<Route path={"/projects/mintbit"} exact>
-										<MintBitDL />
-									</Route>
-									<Route path={"/projects/mintalt"} exact>
-										<MintAltDL />
-									</Route>
-									<Route path={"/projects/mintcraft"} exact>
-										<MintcraftDL />
-									</Route>
-									<Route path={"/projects/win10tiles"} exact>
-										<Win10TilesDL />
-									</Route>
-									<Route path={"/faq"} exact>
-										<Faq />
-									</Route>
-									<Route path={"/contact"} exact>
-										<Contact />
-									</Route>
-
-									<Route component={Error404}>
-										<Error404 />
-									</Route>
-								</Switch>
-							</Grid>
+				<CssBaseline />
+				<Router>
+					<Grid container style={{ minHeight: "calc(100vh - 212px)" }}>
+						<Grid item xs={12} lg={2.5} sx={{ padding: "25px 30px" }}>
+							<Link
+								to="/"
+								style={{
+									float: "right",
+									animation:
+										"fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards",
+									opacity: "0",
+								}}
+							>
+								<img src={Wordmark} height="30px" alt="pprmint." />
+							</Link>
+							<div className="nav">
+								<NavLink to="/" text="Home" delay="0.12s" />
+								<NavLink to="/about" text="About" delay="0.14s" />
+								<NavLink to="/projects" text="Projects" delay="0.16s" />
+								<NavLink to="/contact" text="Contact & FAQ" delay="0.18s" />
+								<br />
+								<Divider />
+							</div>
 						</Grid>
-					</Router>
-				</Container>
+						<Grid item xs={12} lg={7} sx={{ padding: "0 30px" }}>
+							{/* All the different pages that exist here, pretty much. */}
+							<Switch>
+								<Route path={"/"} exact>
+									<Home />
+								</Route>
+								<Route path={"/about"} exact>
+									<About />
+								</Route>
+								<Route path={"/projects"} exact>
+									<Projects />
+								</Route>
+								<Route path={"/projects/mintsans"} exact>
+									<MintSansDL />
+								</Route>
+								<Route path={"/projects/mintbit"} exact>
+									<MintBitDL />
+								</Route>
+								<Route path={"/projects/mintalt"} exact>
+									<MintAltDL />
+								</Route>
+								<Route path={"/projects/mintcraft"} exact>
+									<MintcraftDL />
+								</Route>
+								<Route path={"/projects/win10tiles"} exact>
+									<Win10TilesDL />
+								</Route>
+								<Route path={"/contact"} exact>
+									<Contact />
+								</Route>
+
+								<Route path={"/works"} exact>
+									<Redirect to="/projects" />
+								</Route>
+								<Route path={"/downloads"} exact>
+									<Redirect to="/projects" />
+								</Route>
+								<Route path={"/faq"} exact>
+									<Redirect to="/contact" />
+								</Route>
+								<Route path={"/mintcraft"} exact>
+									<Redirect to="/projects/mintcraft" />
+								</Route>
+								<Route path={"/mintsans"} exact>
+									<Redirect to="/projects/mintsans" />
+								</Route>
+								<Route path={"/mintalt"} exact>
+									<Redirect to="/projects/mintalt" />
+								</Route>
+								<Route path={"/win10tiles"} exact>
+									<Redirect to="/projects/win10tiles" />
+								</Route>
+
+								<Route component={Error404}>
+									<Error404 />
+								</Route>
+							</Switch>
+						</Grid>
+					</Grid>
+				</Router>
 				<footer style={{ margin: "0 24px" }}>
-					<div style={{ marginTop: "15px", float: "left" }}>
+					<div style={{ marginTop: "5px", float: "left" }}>
 						<Typography variant="body2">
-							2021, pprmint. Made with coffee, hosted on{" "}
+							2022, pprmint.
+							<br />
+							Made with coffee and hosted on{" "}
 							<a
 								className="external"
 								href="https://firebase.google.com/support/privacy/"
@@ -235,46 +248,21 @@ function App() {
 							>
 								Firebase
 							</a>
-							.
 						</Typography>
 					</div>
 					<div style={{ float: "right" }}>
-						<IconButton
-							href="https://twitter.com/npprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-							size="large"
-							sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
-						>
+						<IconLink href="https://twitter.com/npprmint">
 							<RiTwitterLine />
-						</IconButton>
-						<IconButton
-							href="https://www.youtube.com/c/pprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-							size="large"
-							sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
-						>
+						</IconLink>
+						<IconLink href="https://www.youtube.com/c/pprmint">
 							<RiYoutubeLine />
-						</IconButton>
-						<IconButton
-							href="https://www.behance.net/pprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-							size="large"
-							sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
-						>
+						</IconLink>
+						<IconLink href="https://www.behance.net/pprmint">
 							<RiBehanceLine />
-						</IconButton>
-						<IconButton
-							href="https://github.com/pprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-							size="large"
-							sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
-						>
+						</IconLink>
+						<IconLink href="https://github.com/pprmint">
 							<RiGithubLine />
-						</IconButton>
+						</IconLink>
 					</div>
 				</footer>
 			</ThemeProvider>
