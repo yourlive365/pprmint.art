@@ -27,7 +27,7 @@ import {
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
-import MintSansDL from "./pages/projects/mintsans/MintSans";
+import MintsansDL from "./pages/projects/mintsans/Mintsans";
 import MintBitDL from "./pages/projects/mintbit/MintBit";
 import MintAltDL from "./pages/projects/mintalternative/MintAlt";
 import MintcraftDL from "./pages/projects/mintcraft/Mintcraft";
@@ -79,11 +79,15 @@ const theme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
+			light: "#0C6",
 			main: "#0C6",
+			dark: "#095",
 			contrastText: "#111",
 		},
 		secondary: {
+			light: "#19F",
 			main: "#19F",
+			dark: "#17c",
 			contrastText: "#111",
 		},
 		background: {
@@ -95,19 +99,27 @@ const theme = createTheme({
 			secondary: "#BBB",
 		},
 		error: {
+			light: "#F34",
 			main: "#F34",
+			dark: "#f34",
 			contrastText: "#111",
 		},
 		warning: {
+			light: "#FB2",
 			main: "#FB2",
+			dark: "#d92",
 			contrastText: "#111",
 		},
 		info: {
+			light: "#19F",
 			main: "#19F",
+			dark: "#17c",
 			contrastText: "#111",
 		},
 		success: {
+			light: "#0C6",
 			main: "#0C6",
+			dark: "#095",
 			contrastText: "#111",
 		},
 	},
@@ -187,7 +199,7 @@ function App() {
 									<Projects />
 								</Route>
 								<Route path={"/projects/mintsans"} exact>
-									<MintSansDL />
+									<MintsansDL />
 								</Route>
 								<Route path={"/projects/mintbit"} exact>
 									<MintBitDL />

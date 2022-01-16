@@ -22,7 +22,7 @@ function Projects() {
 				<title>pprmint.de – Projects.</title>
 				<meta
 					name="description"
-					content="Download things I made, like fonts, my Minecraft ressource pack or my Windows 10 start menu tiles. Free of charge, of course. Can't use PayPal yet, so..."
+					content="Download things I made, like fonts, my Minecraft ressource pack or my Windows 10 start menu tiles."
 				/>
 			</Helmet>
 			<div className="title">
@@ -73,9 +73,9 @@ function Projects() {
 							<CardContent>
 								<Typography variant="h2">A sans-serif font</Typography>
 								<Typography variant="body1">
-									This font has the second worst name I ever came up with and
-									was my first attempt at creating a geometric font family. A
-									more optimized version is in development, just like this page.
+									My first attempt at creating a geometric font family. A more
+									optimized version is in development and will take at least
+									thrice as long as it has taken me to make the following page.
 								</Typography>
 							</CardContent>
 							<CardActions>
@@ -86,11 +86,9 @@ function Projects() {
 								>
 									Download latest
 								</Button>
-								{/* <Link to="/projects/mintsans"> */}
-								<Button color="inherit" disabled>
-									Learn more
-								</Button>
-								{/* </Link> */}
+								<Link to="/projects/mintsans">
+									<Button color="inherit">Learn more</Button>
+								</Link>
 							</CardActions>
 						</Card>
 					</Grid>
@@ -136,9 +134,18 @@ function Projects() {
 								<Typography variant="h2">A tile icon pack.</Typography>
 								<Typography variant="body1">
 									Remember when the Windows start menu wasn't shit, then it was,
-									then it kinda wasn't, then Windows 11? Similar to the absence
-									of a respective page, there are no tiles in Windows 11.
-									Consider yourself lucky if you still run Windows 10.
+									then it kinda wasn't, then Windows 11 came? This page has one
+									thing in common with tiles in the new start menu: They don't
+									exist.{" "}
+									<a
+										className="external"
+										href="https://www.stardock.com/products/start11/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Stardock
+									</a>{" "}
+									filled one of those gaps though.
 								</Typography>
 							</CardContent>
 							<CardActions>
