@@ -1,7 +1,7 @@
 html {
 	width: 100vw;
 	overflow-x: hidden;
-	margin-top: 150px;
+	margin-top: 140px;
 }
 
 :root {
@@ -22,10 +22,10 @@ html {
 	--backgroundTertiary: #333;
 	/* Easing */
 	--easeOut: cubic-bezier(0, 0, 0.2, 1);
-    /* Inset box shadow offsets */
-    --boxInsetBody: -1.3rem;
-    --boxInsetH2: -2.65rem;
-    --boxInsetH3: -2rem;
+	/* Inset box shadow offsets */
+	--boxInsetBody: -1.3rem;
+	--boxInsetH2: -2.65rem;
+	--boxInsetH3: -2rem;
 }
 
 /* Scrollbars */
@@ -63,17 +63,35 @@ html {
 	}
 }
 
-.nav {
-	clear: right;
+nav {
+    clear: right;
 }
-.nav a h3 {
+nav a {
+    display: block;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1.5em;
 	animation: fadeBottom 0.375s var(--easeOut) forwards;
-	transition: all 0.1s ease-out;
-	color: var(--textPrimary) !important;
+	transition: all 0.2s var(--easeOut);
+	color: var(--textPrimary);
 	opacity: 0;
-}
-.nav a h3:hover {
-	color: var(--textSecondary) !important;
+    &::after {
+        content: "•";
+        opacity: 0;
+        transition: all 0.2s var(--easeOut);
+        margin: 0 -5px;
+    }
+	&:hover {
+        color: var(--textSecondary);
+	}
+	&.active {
+        color: var(--textSecondary);
+        &::after {
+            color: var(--greenPrimary);
+            opacity: 1;
+            margin: 0 5px;
+        }
+	}
 }
 
 img {
@@ -113,44 +131,38 @@ h3 a:focus-visible {
 p a,
 h2 a,
 h3 a {
-    transition: all 0.15s;
+	transition: all 0.15s;
 	box-shadow: inset 0 -1px 0 #ffffff55;
 	margin: 0 0.3rem;
 	padding: 0;
-}
-/* General properties for hovering over internal links */
-p a:hover,
-h2 a:hover,
-h3 a:hover {
-    color: var(--backgroundPrimary);
-	border-radius: 4px;
-	margin: 0;
-	padding: 0 0.3rem;
+	&:hover {
+		color: var(--backgroundPrimary);
+		border-radius: 4px;
+		margin: 0;
+		padding: 0 0.3rem;
+	}
 }
 /* Specific inset positions for each text size needed */
 p a:hover {
-    box-shadow: inset 0 var(--boxInsetBody) 0 var(--greenPrimary);
+	box-shadow: inset 0 var(--boxInsetBody) 0 var(--greenPrimary);
 }
 h2 a:hover {
-    box-shadow: inset 0 var(--boxInsetH2) 0 var(--greenPrimary);
+	box-shadow: inset 0 var(--boxInsetH2) 0 var(--greenPrimary);
 }
 h3 a:hover {
-    box-shadow: inset 0 var(--boxInsetH3) 0 var(--greenPrimary);
+	box-shadow: inset 0 var(--boxInsetH3) 0 var(--greenPrimary);
 }
 /* Special underline for external links */
 p a.external,
 h2 a.external,
 h3 a.external {
-    position: relative;
+	position: relative;
 	margin: 0 0.5rem 0 0.3rem;
 	padding: 0;
-}
-/* General properties for hovering over external links */
-p a.external:hover,
-h2 a.external:hover,
-h3 a.external:hover {
-	margin: 0;
-	padding: 0 0.5rem 0 0.3rem;
+	&:hover {
+		margin: 0;
+		padding: 0 0.5rem 0 0.3rem;
+	}
 }
 /* That arrow */
 p a.external::after,
@@ -165,19 +177,19 @@ h3 a.external::after {
 	margin-right: 0.2rem;
 }
 a.external:hover::after {
-    color: var(--backgroundPrimary);
+	color: var(--backgroundPrimary);
 	top: 0rem;
 	left: 0.45rem;
 }
 /* Specific inset positions for each text size needed */
 p a.external:hover {
-    box-shadow: inset 0 var(--boxInsetBody) 0 var(--bluePrimary);
+	box-shadow: inset 0 var(--boxInsetBody) 0 var(--bluePrimary);
 }
 h2 a.external:hover {
-    box-shadow: inset 0 var(--boxInsetH2) 0 var(--bluePrimary);
+	box-shadow: inset 0 var(--boxInsetH2) 0 var(--bluePrimary);
 }
 h3 a.external:hover {
-    box-shadow: inset 0 var(--boxInsetH3) 0 var(--bluePrimary);
+	box-shadow: inset 0 var(--boxInsetH3) 0 var(--bluePrimary);
 }
 
 .MuiListItemIcon-root {

@@ -5,6 +5,7 @@ import {
 	Route,
 	Link,
 	Redirect,
+	NavLink,
 } from "react-router-dom";
 import {
 	ThemeProvider,
@@ -47,20 +48,6 @@ import {
 	RiYoutubeLine,
 } from "react-icons/ri";
 
-function NavLink(props: { to: string; text: string; delay: string }) {
-	return (
-		<Link to={props.to}>
-			<Typography
-				variant="h3"
-				align="right"
-				style={{ animationDelay: props.delay }}
-			>
-				{props.text}
-			</Typography>
-		</Link>
-	);
-}
-
 function IconLink(props: React.PropsWithChildren<{ href: string }>) {
 	return (
 		<IconButton
@@ -68,7 +55,7 @@ function IconLink(props: React.PropsWithChildren<{ href: string }>) {
 			target="_blank"
 			rel="noopener noreferrer"
 			size="large"
-			sx={{ color: "text.primary", margin: "0 10px 10px 0" }}
+			sx={{ color: "text.primary", margin: "0 0 15px 10px" }}
 		>
 			{props.children}
 		</IconButton>
@@ -131,32 +118,62 @@ const theme = createTheme({
 			color: "#EEE",
 			fontWeight: 600,
 			lineHeight: 1.2,
-			textAlign: "left",
 		},
 		h2: {
 			color: "#EEE",
 			fontSize: "2.1rem",
 			fontWeight: 600,
 			lineHeight: 1.5,
-			textAlign: "left",
 		},
 		h3: {
 			color: "#EEE",
 			fontSize: "1.5rem",
 			fontWeight: 600,
 			lineHeight: 1.5,
-			textAlign: "left",
 		},
 		body1: {
 			color: "#BBB",
 			lineHeight: 1.5,
-			textAlign: "justify",
 		},
 	},
 	shape: {
 		borderRadius: 4,
 	},
 });
+
+const Navigation = () => (
+	<nav>
+		<NavLink
+			exact
+			activeClassName="active"
+			to="/"
+			style={{ animationDelay: "0.12s" }}
+		>
+			Home
+		</NavLink>
+		<NavLink
+			activeClassName="active"
+			to="/about"
+			style={{ animationDelay: "0.14s" }}
+		>
+			About
+		</NavLink>
+		<NavLink
+			activeClassName="active"
+			to="/projects"
+			style={{ animationDelay: "0.16s" }}
+		>
+			Projects
+		</NavLink>
+		<NavLink
+			activeClassName="active"
+			to="/contact"
+			style={{ animationDelay: "0.18s" }}
+		>
+			Contact & FAQ
+		</NavLink>
+	</nav>
+);
 
 function App() {
 	return (
@@ -177,14 +194,15 @@ function App() {
 							>
 								<img src={Wordmark} height="30px" alt="pprmint." />
 							</Link>
-							<div className="nav">
-								<NavLink to="/" text="Home" delay="0.12s" />
-								<NavLink to="/about" text="About" delay="0.14s" />
-								<NavLink to="/projects" text="Projects" delay="0.16s" />
-								<NavLink to="/contact" text="Contact & FAQ" delay="0.18s" />
+							<Navigation />
+							{/* <div className="nav">
+								<NavPage to="/" text="Home" delay="0.12s" />
+								<NavPage to="/about" text="About" delay="0.14s" />
+								<NavPage to="/projects" text="Projects" delay="0.16s" />
+								<NavPage to="/contact" text="Contact & FAQ" delay="0.18s" />
 								<br />
 								<Divider />
-							</div>
+							</div> */}
 						</Grid>
 						<Grid item xs={12} lg={7} sx={{ padding: "0 30px" }}>
 							{/* All the different pages that exist here, pretty much. */}
@@ -246,7 +264,7 @@ function App() {
 						</Grid>
 					</Grid>
 				</Router>
-				<footer style={{ margin: "0 24px" }}>
+				<footer style={{ padding: "0 30px", backgroundColor: "#222" }}>
 					<div style={{ marginTop: "5px", float: "left" }}>
 						<Typography variant="body2">
 							2022, pprmint.

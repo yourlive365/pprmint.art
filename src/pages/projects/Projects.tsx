@@ -28,7 +28,7 @@ function Projects() {
 			<div className="title">
 				<Typography variant="h1">Things I made.</Typography>
 				<Typography variant="h2">
-					Visit the <Link to="/contact">FAQ</Link> to learn about terms of use.
+					Visit the <Link to="/contact">FAQ</Link> to learn more about terms of use.
 				</Typography>
 			</div>
 			<div className="content">

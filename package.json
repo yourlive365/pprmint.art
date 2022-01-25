@@ -31,6 +31,7 @@
 		"react-swipeable-views": "^0.13.9",
 		"react-transition-group": "^4.4.2",
 		"remixicon": "^2.5.0",
+		"sass": "^1.49.0",
 		"typescript": "~3.7.2",
 		"viewerjs": "^1.10.2",
 		"yarn": "^1.22.17"
@@ -52,5 +53,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"@types/react-router-transition": "^2.1.1"
 	}
 }
