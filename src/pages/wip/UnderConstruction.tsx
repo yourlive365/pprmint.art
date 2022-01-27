@@ -4,43 +4,43 @@ import { Helmet } from "react-helmet";
 import { Button, Typography, Container, Grid } from "@mui/material";
 import Image from "material-ui-image";
 
-import IceCreamCrimeScene from "./assets/ice_crime_scene.svg";
+import PylonScene from "./assets/pylon.svg";
 
-function FourOhFour() {
+function Wip() {
 	return (
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Not found.</title>
+				<title>pprmint.de – Too early.</title>
 				<meta
 					name="description"
-					content="This page was not found. Unless you found it on Google, somehow, which means you technically found it...?"
+					content="This page is not quite ready yet. Check back at a later time."
 				/>
 			</Helmet>
 			<div className="title">
-				<Typography variant="h1">Who's the culprit?</Typography>
+				<Typography variant="h1">You're too early.</Typography>
 			</div>
 			<div className="content">
 				<Grid container spacing={4}>
 					<Grid item xs={12} sm={6}>
 						<Image
-							src={IceCreamCrimeScene}
+							src={PylonScene}
 							width="100%"
-							alt="Ice cream at a crime scene."
+							alt="A pylon."
 							aspectRatio={16 / 9}
 							color="transparent"
 						/>
 					</Grid>
 					<Grid item xs={12} sm={6} style={{ alignSelf: "center" }}>
-						<Typography variant="h2">Nothing to see here.</Typography>
+						<Typography variant="h2">Nothing to see here. Yet.</Typography>
 						<Typography variant="body1">
-							The page you were looking for was <s>killed</s> not found. We're
-							unsure about the motive, but we're working on it.
+							The page you were looking for is not quite ready yet. Check back
+							again at a later date.
 						</Typography>
 						<br />
 						<Link to="/">
 							<Button variant="contained" size="large" color="warning">
-								Leave the scene
+								Leave for now
 							</Button>
 						</Link>
 					</Grid>
@@ -50,4 +50,4 @@ function FourOhFour() {
 	);
 }
 
-export default FourOhFour;
+export default Wip;

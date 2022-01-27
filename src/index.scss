@@ -1,7 +1,7 @@
 html {
 	width: 100vw;
 	overflow-x: hidden;
-	margin-top: 140px;
+	margin-top: 145px;
 }
 
 :root {
@@ -153,9 +153,7 @@ h3 a:hover {
 	box-shadow: inset 0 var(--boxInsetH3) 0 var(--greenPrimary);
 }
 /* Special underline for external links */
-p a.external,
-h2 a.external,
-h3 a.external {
+p a.external {
 	position: relative;
 	margin: 0 0.5rem 0 0.3rem;
 	padding: 0;
@@ -165,9 +163,7 @@ h3 a.external {
 	}
 }
 /* That arrow */
-p a.external::after,
-h2 a.external::after,
-h3 a.external::after {
+a.external::after {
 	content: "↗";
 	color: var(--bluePrimary);
 	transition: all 0.15s;
@@ -196,7 +192,7 @@ h3 a.external:hover {
 	font-size: 20px;
 }
 .MuiListItemText-root {
-	color: #b3b3b3;
+	color: var(--textPrimary);
 }
 
 .content {
@@ -222,11 +218,11 @@ h3 a.external:hover {
 }
 
 /* Show a little divider line when nav is put on top of main content */
-.nav hr {
+nav hr {
 	display: none;
 }
 @media only screen and (max-width: 1199px) {
-	.nav hr {
+	nav hr {
 		display: block;
 	}
 }

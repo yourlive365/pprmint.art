@@ -13,6 +13,8 @@ import {
 
 import MintcraftCardHeader from "./mintcraft/assets/mintcraft.svg";
 import MintSansCardHeader from "./mintsans/assets/mintsans.svg";
+import MintAltCardHeader from "./mintalternative/assets/mintalt.svg";
+import Win10TilesCardHeader from "./win10tiles/assets/win10tiles.svg";
 
 function Projects() {
 	return (
@@ -94,11 +96,11 @@ function Projects() {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<Card variant="outlined">
-							{/* <CardMedia
+							<CardMedia
 								component="img"
-								image={MintSansCardHeader}
-								alt="MintSans- well, it's hardly a logo, more like just the name of the font set in MintSans itself."
-							/> */}
+								image={MintAltCardHeader}
+								alt="The MintAlternative 'logo' with a 2K Material icon behind it. Get it? It's funny because the want was inspired by Material icons."
+							/>
 							<CardContent>
 								<Typography variant="h2">A Material-inspired font</Typography>
 								<Typography variant="body1">
@@ -125,13 +127,13 @@ function Projects() {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<Card variant="outlined">
-							{/* <CardMedia
+							<CardMedia
 								component="img"
-								image={MintSansCardHeader}
-								alt="MintSans- well, it's hardly a logo, more like just the name of the font set in MintSans itself."
-							/> */}
+								image={Win10TilesCardHeader}
+								alt="Some Windows 10 tiles. With 'Windows 10 tiles' being written above them."
+							/>
 							<CardContent>
-								<Typography variant="h2">A tile icon pack.</Typography>
+								<Typography variant="h2">A tile icon collection.</Typography>
 								<Typography variant="body1">
 									Remember when the Windows start menu wasn't shit, then it was,
 									then it kinda wasn't, then Windows 11 came? This page has one

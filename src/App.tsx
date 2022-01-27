@@ -35,6 +35,7 @@ import MintcraftDL from "./pages/projects/mintcraft/Mintcraft";
 import Win10TilesDL from "./pages/projects/win10tiles/WinTiles";
 import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/404/Error404";
+import UnderConstruction from "./pages/wip/UnderConstruction";
 
 import Wordmark from "./globalassets/wordmark.svg";
 
@@ -117,19 +118,18 @@ const theme = createTheme({
 			fontFamily: '"Archia", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontWeight: 600,
-			lineHeight: 1.2,
 		},
 		h2: {
 			color: "#EEE",
 			fontSize: "2.1rem",
 			fontWeight: 600,
-			lineHeight: 1.5,
+			padding: ".3rem 0",
 		},
 		h3: {
 			color: "#EEE",
 			fontSize: "1.5rem",
 			fontWeight: 600,
-			lineHeight: 1.5,
+			padding: ".3rem 0",
 		},
 		body1: {
 			color: "#BBB",
@@ -147,31 +147,33 @@ const Navigation = () => (
 			exact
 			activeClassName="active"
 			to="/"
-			style={{ animationDelay: "0.12s" }}
+			style={{ animationDelay: "0.14s" }}
 		>
 			Home
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/about"
-			style={{ animationDelay: "0.14s" }}
+			style={{ animationDelay: "0.18s" }}
 		>
 			About
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/projects"
-			style={{ animationDelay: "0.16s" }}
+			style={{ animationDelay: "0.22s" }}
 		>
 			Projects
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/contact"
-			style={{ animationDelay: "0.18s" }}
+			style={{ animationDelay: "0.26s" }}
 		>
 			Contact & FAQ
 		</NavLink>
+        <br />
+		<Divider />
 	</nav>
 );
 
@@ -182,7 +184,7 @@ function App() {
 				<CssBaseline />
 				<Router>
 					<Grid container style={{ minHeight: "calc(100vh - 212px)" }}>
-						<Grid item xs={12} lg={2.5} sx={{ padding: "25px 30px" }}>
+						<Grid item xs={12} lg={2.5} sx={{ padding: "15px 30px" }}>
 							<Link
 								to="/"
 								style={{
@@ -192,17 +194,9 @@ function App() {
 									opacity: "0",
 								}}
 							>
-								<img src={Wordmark} height="30px" alt="pprmint." />
+								<img src={Wordmark} height="35px" alt="pprmint." />
 							</Link>
 							<Navigation />
-							{/* <div className="nav">
-								<NavPage to="/" text="Home" delay="0.12s" />
-								<NavPage to="/about" text="About" delay="0.14s" />
-								<NavPage to="/projects" text="Projects" delay="0.16s" />
-								<NavPage to="/contact" text="Contact & FAQ" delay="0.18s" />
-								<br />
-								<Divider />
-							</div> */}
 						</Grid>
 						<Grid item xs={12} lg={7} sx={{ padding: "0 30px" }}>
 							{/* All the different pages that exist here, pretty much. */}
@@ -211,7 +205,8 @@ function App() {
 									<Home />
 								</Route>
 								<Route path={"/about"} exact>
-									<About />
+									{/* <About /> */}
+									<UnderConstruction />
 								</Route>
 								<Route path={"/projects"} exact>
 									<Projects />
@@ -219,18 +214,18 @@ function App() {
 								<Route path={"/projects/mintsans"} exact>
 									<MintsansDL />
 								</Route>
-								<Route path={"/projects/mintbit"} exact>
+{/* 								<Route path={"/projects/mintbit"} exact>
 									<MintBitDL />
 								</Route>
 								<Route path={"/projects/mintalt"} exact>
 									<MintAltDL />
-								</Route>
+								</Route> */}
 								<Route path={"/projects/mintcraft"} exact>
 									<MintcraftDL />
 								</Route>
-								<Route path={"/projects/win10tiles"} exact>
+{/* 								<Route path={"/projects/win10tiles"} exact>
 									<Win10TilesDL />
-								</Route>
+								</Route> */}
 								<Route path={"/contact"} exact>
 									<Contact />
 								</Route>

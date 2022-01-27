@@ -44,7 +44,7 @@ function MintcraftDL() {
 				<title>pprmint.de – Mintcraft.</title>
 				<meta
 					name="description"
-					content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking. Craft."
+					content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking. Craft. It's basically dark mode Minecraft with some fancy new icons here and there."
 				/>
 			</Helmet>
 			<div className="title">
