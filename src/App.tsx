@@ -32,7 +32,7 @@ import MintsansDL from "./pages/projects/mintsans/Mintsans";
 import MintBitDL from "./pages/projects/mintbit/MintBit";
 import MintAltDL from "./pages/projects/mintalternative/MintAlt";
 import MintcraftDL from "./pages/projects/mintcraft/Mintcraft";
-import Win10TilesDL from "./pages/projects/win10tiles/WinTiles";
+import Win10TilesDL from "./pages/projects/win10tiles/Win10Tiles";
 import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/404/Error404";
 import UnderConstruction from "./pages/wip/UnderConstruction";
@@ -223,9 +223,9 @@ function App() {
 								<Route path={"/projects/mintcraft"} exact>
 									<MintcraftDL />
 								</Route>
-{/* 								<Route path={"/projects/win10tiles"} exact>
+								<Route path={"/projects/win10tiles"} exact>
 									<Win10TilesDL />
-								</Route> */}
+								</Route>
 								<Route path={"/contact"} exact>
 									<Contact />
 								</Route>

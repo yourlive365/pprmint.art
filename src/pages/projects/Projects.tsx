@@ -158,11 +158,11 @@ function Projects() {
 								>
 									Download latest
 								</Button>
-								{/* <Link to="/projects/mintsans"> */}
-								<Button color="inherit" disabled>
+								<Link to="/projects/win10tiles">
+								<Button color="inherit">
 									Learn more
 								</Button>
-								{/* </Link> */}
+								</Link>
 							</CardActions>
 						</Card>
 					</Grid>
