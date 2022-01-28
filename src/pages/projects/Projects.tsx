@@ -30,7 +30,8 @@ function Projects() {
 			<div className="title">
 				<Typography variant="h1">Things I made.</Typography>
 				<Typography variant="h2">
-					Visit the <Link to="/contact">FAQ</Link> to learn more about terms of use.
+					Visit the <Link to="/contact">FAQ</Link> to learn more about terms of
+					use.
 				</Typography>
 			</div>
 			<div className="content">
@@ -133,21 +134,12 @@ function Projects() {
 								alt="Some Windows 10 tiles. With 'Windows 10 tiles' being written above them."
 							/>
 							<CardContent>
-								<Typography variant="h2">A tile icon collection.</Typography>
+								<Typography variant="h2">A tile icon collection</Typography>
 								<Typography variant="body1">
-									Remember when the Windows start menu wasn't shit, then it was,
-									then it kinda wasn't, then Windows 11 came? This page has one
-									thing in common with tiles in the new start menu: They don't
-									exist.{" "}
-									<a
-										className="external"
-										href="https://www.stardock.com/products/start11/"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										Stardock
-									</a>{" "}
-									filled one of those gaps though.
+									Branding is a pain. That's why everyone has their own that
+									works best for them. With these 32 start menu tiles I made
+									ages ago, I wanted to make them all feel at least somewhat
+									more unified. And also fix Adobe's bullshit icons.
 								</Typography>
 							</CardContent>
 							<CardActions>
@@ -159,9 +151,7 @@ function Projects() {
 									Download latest
 								</Button>
 								<Link to="/projects/win10tiles">
-								<Button color="inherit">
-									Learn more
-								</Button>
+									<Button color="inherit">Learn more</Button>
 								</Link>
 							</CardActions>
 						</Card>
