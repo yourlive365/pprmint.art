@@ -142,7 +142,7 @@ function Win10TilesDL() {
 							>
 								Start11
 							</a>{" "}
-							to get previous start menu(s) back.
+							to get the previous start menu(s) back.
 						</Typography>
 					</CardContent>
 					<CardActions>
