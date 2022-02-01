@@ -8,7 +8,7 @@
 		url("archia/archia-thin-webfont.woff2") format("woff2"),
 		url("archia/archia-thin-webfont.woff") format("woff"),
 		url("archia/archia-thin-webfont.ttf") format("truetype");
-	font-weight: 200;
+	font-weight: 100;
 	font-style: normal;
 }
 @font-face {
@@ -29,7 +29,7 @@
 		url("archia/archia-regular-webfont.woff2") format("woff2"),
 		url("archia/archia-regular-webfont.woff") format("woff"),
 		url("archia/archia-regular-webfont.ttf") format("truetype");
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -61,6 +61,6 @@
 		url("archia/archia-bold-webfont.woff2") format("woff2"),
 		url("archia/archia-bold-webfont.woff") format("woff"),
 		url("archia/archia-bold-webfont.ttf") format("truetype");
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 }

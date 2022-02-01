@@ -29,7 +29,7 @@ function MintsansDL() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Mintsans.</title>
+				<title>A sans-serif font • pprmint.art</title>
 				<meta
 					name="description"
 					content="My first geometric font. Not bad for a first attempt, but not good either."

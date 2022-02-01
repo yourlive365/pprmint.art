@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Image from "material-ui-image";
 
+import NewsDomain from "./assets/newdomain.svg";
 import NewsMintcraft from "./assets/mintcraft.svg";
 import NewsMuiFive from "./assets/mui5.svg";
 import NewsLayout from "./assets/layout.svg";
@@ -96,22 +97,34 @@ function Home() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Good today.</title>
+				<title>pprmint.art</title>
 				<meta
 					name="description"
 					content="I make things look neat with vector points, keyframes, and colorful
-					monospace letters."
+					monospace letters. Have a look at my works or download things you may use for your own intents and purposes."
 				/>
 			</Helmet>
 			<div className="title">
 				<Typography variant="h1">Good today.</Typography>
 				<Typography variant="h2">
-					I make things look neat with vector points, keyframes, and colorful
+					I make things look neat with vector points, keyframes and colorful
 					monospace letters.
 				</Typography>
 			</div>
 			<div className="content">
 				<Typography variant="h2">Here's what's new:</Typography>
+				<br />
+				<AnnouncementCard
+					imageSrc={NewsDomain}
+					imageAlt="My shiny new domain, pprmint.art."
+					date="01. Feb. 2022"
+					headline="A shiny new domain."
+					strongText="Have you ever seen a single word of German around here? Ganz genau."
+					text="It always bothered me a bit that the top-level domain of this website
+                    was .de, even though this website is less about me being German and more about
+                    the things I create. Don't worry, pprmint.de will redirect you to the new
+                    domain for a while."
+				/>
 				<br />
 				<AnnouncementCard
 					imageSrc={NewsLayout}

@@ -41,7 +41,7 @@ function MintcraftDL() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Mintcraft.</title>
+				<title>A Minecraft resource pack • pprmint.art</title>
 				<meta
 					name="description"
 					content="Mintcraft (formerly 'MintCraft') is my Minecraft resource pack with some UI tweaks to my liking. Craft. It's basically dark mode Minecraft with some fancy new icons here and there."

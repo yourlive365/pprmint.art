@@ -11,7 +11,7 @@ function FourOhFour() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Not found.</title>
+				<title>Page not found • pprmint.art</title>
 				<meta
 					name="description"
 					content="This page was not found. Unless you found it on Google, somehow, which means you technically found it...?"
@@ -25,9 +25,8 @@ function FourOhFour() {
 					<Grid item xs={12} sm={6}>
 						<Image
 							src={IceCreamCrimeScene}
-							width="100%"
-							alt="Ice cream at a crime scene."
-							aspectRatio={16 / 9}
+							alt="Someone killed the ice cream."
+							aspectRatio={2 / 1}
 							color="transparent"
 						/>
 					</Grid>

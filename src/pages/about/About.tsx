@@ -13,7 +13,7 @@ function About() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – About.</title>
+				<title>About me • pprmint.art</title>
 				<meta
 					name="description"
 					content="Learn more about that one German weeb that also makes design-related things from time to time."

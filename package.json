@@ -7,6 +7,7 @@
 		"@emotion/styled": "^11.3.0",
 		"@material-ui/core": "^4.11.0",
 		"@material-ui/icons": "^4.9.1",
+		"@mui/lab": "^5.0.0-alpha.66",
 		"@mui/material": "^5.0.4",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
@@ -33,7 +34,6 @@
 		"remixicon": "^2.5.0",
 		"sass": "^1.49.0",
 		"typescript": "~3.7.2",
-		"viewerjs": "^1.10.2",
 		"yarn": "^1.22.17"
 	},
 	"scripts": {

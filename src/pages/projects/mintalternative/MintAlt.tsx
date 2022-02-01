@@ -22,7 +22,7 @@ function MintAltDL() {
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>pprmint.de – MintAlternative.</title>
+                <title>A mistake • pprmint.art</title>
                 <meta
                     name="description"
                     content="A terrible name for an equally terrible fo- I mean This is a font inspired by Google's Material icons, as some of these have texts in them as well. I can only really recommend the numbers in here."

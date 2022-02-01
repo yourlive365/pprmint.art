@@ -9,7 +9,14 @@ import {
 	CardContent,
 	CardMedia,
 	CardActions,
+	ImageListItem,
+	ListSubheader,
+	ImageListItemBar,
+	IconButton,
+	ImageList,
 } from "@mui/material";
+
+import Image from "material-ui-image";
 
 import MintcraftCardHeader from "./mintcraft/assets/mintcraft.svg";
 import MintSansCardHeader from "./mintsans/assets/mintsans.svg";
@@ -21,10 +28,10 @@ function Projects() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Projects.</title>
+				<title>Things I made • pprmint.art</title>
 				<meta
 					name="description"
-					content="Download things I made, like fonts, my Minecraft ressource pack or my Windows 10 start menu tiles."
+					content="Have a look at some of my works, or download some other things I made, like my Minecraft resource pack, fonts or a few wallpapers for your phone and desktop."
 				/>
 			</Helmet>
 			<div className="title">
@@ -44,7 +51,6 @@ function Projects() {
 								alt="Mintcraft logo"
 							/>
 							<CardContent>
-								<Typography variant="h2">A Minecraft resource pack</Typography>
 								<Typography variant="body1">
 									What started as a simple "I don't like the colors of the
 									default Minceraft UI" ended with me trying to make the UI look
@@ -74,7 +80,6 @@ function Projects() {
 								alt="MintSans- well, it's hardly a logo, more like just the name of the font set in MintSans itself."
 							/>
 							<CardContent>
-								<Typography variant="h2">A sans-serif font</Typography>
 								<Typography variant="body1">
 									My first attempt at creating a geometric font family. A more
 									optimized version is in development and will take at least
@@ -103,7 +108,6 @@ function Projects() {
 								alt="The MintAlternative 'logo' with a 2K Material icon behind it. Get it? It's funny because the want was inspired by Material icons."
 							/>
 							<CardContent>
-								<Typography variant="h2">A Material-inspired font</Typography>
 								<Typography variant="body1">
 									I looked at Google's Material icons, noticed some had text in
 									them, and went "Huh." The good: Numbers. The bad: That stupid
@@ -134,7 +138,6 @@ function Projects() {
 								alt="Some Windows 10 tiles. With 'Windows 10 tiles' being written above them."
 							/>
 							<CardContent>
-								<Typography variant="h2">A tile icon collection</Typography>
 								<Typography variant="body1">
 									Branding is a pain. That's why everyone has their own that
 									works best for them. With these 32 start menu tiles I made
@@ -157,6 +160,7 @@ function Projects() {
 						</Card>
 					</Grid>
 				</Grid>
+				<br />
 			</div>
 		</>
 	);

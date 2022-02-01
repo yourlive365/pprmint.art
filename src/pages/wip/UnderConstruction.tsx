@@ -11,7 +11,7 @@ function Wip() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Too early.</title>
+				<title>Unter construction • pprmint.art</title>
 				<meta
 					name="description"
 					content="This page is not quite ready yet. Check back at a later time."
@@ -27,7 +27,7 @@ function Wip() {
 							src={PylonScene}
 							width="100%"
 							alt="A pylon."
-							aspectRatio={16 / 9}
+							aspectRatio={2 / 1}
 							color="transparent"
 						/>
 					</Grid>

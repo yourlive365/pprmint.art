@@ -9,7 +9,7 @@
 		url("basier_square/basiersquare-regular-webfont.woff2") format("woff2"),
 		url("basier_square/basiersquare-regular-webfont.woff") format("woff"),
 		url("basier_square/basiersquare-regular-webfont.ttf") format("truetype");
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -22,7 +22,7 @@
 		url("basier_square/basiersquare-regularitalic-webfont.woff") format("woff"),
 		url("basier_square/basiersquare-regularitalic-webfont.ttf")
 			format("truetype");
-	font-weight: normal;
+	font-weight: 400;
 	font-style: italic;
 }
 
@@ -83,7 +83,7 @@
 		url("basier_square/basiersquare-bold-webfont.woff2") format("woff2"),
 		url("basier_square/basiersquare-bold-webfont.woff") format("woff"),
 		url("basier_square/basiersquare-bold-webfont.ttf") format("truetype");
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
@@ -94,6 +94,6 @@
 		url("basier_square/basiersquare-bolditalic-webfont.woff2") format("woff2"),
 		url("basier_square/basiersquare-bolditalic-webfont.woff") format("woff"),
 		url("basier_square/basiersquare-bolditalic-webfont.ttf") format("truetype");
-	font-weight: bold;
+	font-weight: 700;
 	font-style: italic;
 }

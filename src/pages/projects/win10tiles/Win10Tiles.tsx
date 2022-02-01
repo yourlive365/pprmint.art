@@ -66,7 +66,7 @@ function Win10TilesDL() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Windows 10 Tiles.</title>
+				<title>Start menu tiles • pprmint.art</title>
 				<meta
 					name="description"
 					content="Make your start menu pretty (maybe) by using these in yours. Best if you're running version 20H2 or later."
@@ -132,8 +132,8 @@ function Win10TilesDL() {
 								rel="noopener noreferrer"
 							>
 								TileIconifier
-							</a>
-							and on Windows 11 {" "}
+							</a>{" "}
+							and{" "}
 							<a
 								className="external"
 								href="https://www.stardock.com/products/start11/"
@@ -142,7 +142,7 @@ function Win10TilesDL() {
 							>
 								Start11
 							</a>{" "}
-							to get the previous start menu(s) back.
+							on Windows 11 to get the previous start menu(s) back.
 						</Typography>
 					</CardContent>
 					<CardActions>

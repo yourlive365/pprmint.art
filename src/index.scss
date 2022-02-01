@@ -26,6 +26,9 @@ html {
 	--boxInsetBody: -1.3rem;
 	--boxInsetH2: -2.65rem;
 	--boxInsetH3: -2rem;
+    /* Fonts */
+    --fontPrimary: "Silka", "Roboto", Helvetica, Arial, sans-serif;
+    --fontSecondary: "Basier Square", "Roboto", Helvetica, Arial, sans-serif;
 }
 
 /* Scrollbars */
@@ -64,10 +67,11 @@ html {
 }
 
 nav {
-    clear: right;
+	clear: right;
 }
 nav a {
-    display: block;
+    font-family: var(--fontPrimary);
+	display: block;
 	text-align: right;
 	font-weight: bold;
 	font-size: 1.5em;
@@ -75,22 +79,27 @@ nav a {
 	transition: all 0.2s var(--easeOut);
 	color: var(--textPrimary);
 	opacity: 0;
-    &::after {
-        content: "•";
-        opacity: 0;
-        transition: all 0.2s var(--easeOut);
-        margin: 0 -5px;
-    }
-	&:hover {
-        color: var(--textSecondary);
+	&::after {
+		content: "•";
+		opacity: 0;
+		transition: all 0.2s var(--easeOut);
+		margin: 0 -6px;
+	}
+	&:hover,
+	&:focus-visible {
+		color: var(--textSecondary);
+		letter-spacing: 0.75px;
+	}
+	&:active {
+		letter-spacing: 0;
 	}
 	&.active {
-        color: var(--textSecondary);
-        &::after {
-            color: var(--greenPrimary);
-            opacity: 1;
-            margin: 0 5px;
-        }
+		color: var(--textSecondary);
+		&::after {
+			color: var(--greenPrimary);
+			opacity: 1;
+			margin: 0 4px 0 8px;
+		}
 	}
 }
 

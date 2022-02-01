@@ -39,7 +39,8 @@ import UnderConstruction from "./pages/wip/UnderConstruction";
 
 import Wordmark from "./globalassets/wordmark.svg";
 
-import "./globalassets/fonts/archia.css";
+/* import "./globalassets/fonts/archia.css"; */
+import "./globalassets/fonts/silka.css";
 import "./globalassets/fonts/basier_square.css";
 
 import {
@@ -113,19 +114,21 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily:
-			'"Basier Square", "Archia", "Roboto", Helvetica, Arial, sans-serif',
+			'"Basier Square", "Silka", "Roboto", Helvetica, Arial, sans-serif',
 		h1: {
-			fontFamily: '"Archia", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontWeight: 600,
 		},
 		h2: {
+            fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontSize: "2.1rem",
 			fontWeight: 600,
 			padding: ".3rem 0",
 		},
 		h3: {
+            fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontSize: "1.5rem",
 			fontWeight: 600,

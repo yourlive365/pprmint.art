@@ -42,17 +42,11 @@ function createData(
 }
 
 const rows = [
-	createData("Motion graphics and other videos", "No", "No", "No", "No", 1),
-	createData(
-		"Illustrations and other static images",
-		"No",
-		"No",
-		"No",
-		"No",
-		1
-	),
-	createData("Other projects", "Yes", "No", "Yes", "No", 2),
-	createData("Fonts", "Yes", "Yes", "Yes", "No", 3),
+	createData("Motion graphics and other videos", "✕", "✕", "✕", "✕", 1),
+	createData("Illustrations and other static images", "✕", "✕", "✕", "✕", 1),
+	createData("Desktop and phone wallpapers", "✓", "✕", "✓", "✕", 2),
+	createData("Other projects", "✓", "✕", "✓", "✕", 2),
+	createData("Fonts", "✓", "✓", "✓", "✕", 3),
 ];
 
 function Contact() {
@@ -60,10 +54,10 @@ function Contact() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>pprmint.de – Contact.</title>
+				<title>Get in touch • pprmint.art</title>
 				<meta
 					name="description"
-					content="Click on buttons to send me an email or direct message on Twitter."
+					content="Learn more about what software I use to make my thingies, how you may use some of the things I make and click spicy buttons to send me an email or DM on Twitter."
 				/>
 			</Helmet>
 			<div className="title">
@@ -120,7 +114,7 @@ function Contact() {
 														key={row.name}
 														sx={{
 															"&:last-child td, &:last-child th": { border: 0 },
-															"&:nth-of-type(even)": {
+															"&:nth-of-type(odd)": {
 																backgroundColor: "#111",
 															},
 														}}
@@ -149,7 +143,7 @@ function Contact() {
 										</ListItemIcon>
 										<ListItemText>
 											For these kinds of works, I'd rather you simply focus your
-											senses on them and just enjoy them. Think of my website
+											senses on them and just look at them. Think of my website
 											and YouTube channel as my little art gallery where you can
 											have a look at my works. No buy, no rent, no nothing. Only
 											look.
@@ -160,10 +154,13 @@ function Contact() {
 											<RiNumber2 />
 										</ListItemIcon>
 										<ListItemText>
-											Contrary to how it is the case with my illustrations and
-											animations, I want you to download and use projects like
-											Mintcraft and my Windows 10 tiles yourself. You are also
-											free to make your own changes and share them{" "}
+											Contrary to how it is the case with most of my
+											illustrations and animations, I actually encourage you to
+											download and use projects like{" "}
+											<Link to="/projects/mintcraft">Mintcraft</Link> and my{" "}
+											<Link to="/projects/win10tiles">Windows 10 tiles</Link> as
+											well as my occasional desktop backgrounds for yourself.
+											You are also free to make your own changes and share them{" "}
 											<i>privately</i> with your friends.
 										</ListItemText>
 									</ListItem>
@@ -338,7 +335,7 @@ function Contact() {
 				</Typography>
 				<br />
 				<Button
-					href="mailto:mail@pprmint.de?subject=I'll%20gladly%20ignore%20any%20ads%20or%20offers%20you%20might%20have%20for%20me."
+					href="mailto:mail@pprmint.art?subject=I'll%20gladly%20ignore%20any%20ads%20or%20offers%20you%20might%20have%20for%20me."
 					target="_blank"
 					rel="noopener noreferrer"
 					variant="contained"
