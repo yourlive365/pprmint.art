@@ -11,7 +11,7 @@ function Wip() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>Unter construction • pprmint.art</title>
+				<title>Under construction • pprmint.art</title>
 				<meta
 					name="description"
 					content="This page is not quite ready yet. Check back at a later time."
