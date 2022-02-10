@@ -50,14 +50,16 @@ import {
 	RiYoutubeLine,
 } from "react-icons/ri";
 
-function IconLink(props: React.PropsWithChildren<{ href: string }>) {
+function IconLink(
+	props: React.PropsWithChildren<{ href: string; delay: string }>
+) {
 	return (
 		<IconButton
 			href={props.href}
 			target="_blank"
 			rel="noopener noreferrer"
 			size="large"
-			sx={{ color: "text.primary", margin: "0 0 15px 10px" }}
+			style={{ animationDelay: props.delay }}
 		>
 			{props.children}
 		</IconButton>
@@ -121,14 +123,14 @@ const theme = createTheme({
 			fontWeight: 600,
 		},
 		h2: {
-            fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontSize: "2.1rem",
 			fontWeight: 600,
 			padding: ".3rem 0",
 		},
 		h3: {
-            fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontSize: "1.5rem",
 			fontWeight: 600,
@@ -141,6 +143,15 @@ const theme = createTheme({
 	},
 	shape: {
 		borderRadius: 4,
+	},
+	components: {
+		MuiSkeleton: {
+			styleOverrides: {
+				root: {
+					backgroundColor: "#222",
+				},
+			},
+		},
 	},
 });
 
@@ -175,7 +186,7 @@ const Navigation = () => (
 		>
 			Contact & FAQ
 		</NavLink>
-        <br />
+		<br />
 		<Divider />
 	</nav>
 );
@@ -217,7 +228,7 @@ function App() {
 								<Route path={"/projects/mintsans"} exact>
 									<MintsansDL />
 								</Route>
-{/* 								<Route path={"/projects/mintbit"} exact>
+								{/* <Route path={"/projects/mintbit"} exact>
 									<MintBitDL />
 								</Route>
 								<Route path={"/projects/mintalt"} exact>
@@ -262,8 +273,8 @@ function App() {
 						</Grid>
 					</Grid>
 				</Router>
-				<footer style={{ padding: "0 30px", backgroundColor: "#222" }}>
-					<div style={{ marginTop: "5px", float: "left" }}>
+				<footer>
+					<div className="copyright">
 						<Typography variant="body2">
 							2022, pprmint.
 							<br />
@@ -278,17 +289,17 @@ function App() {
 							</a>
 						</Typography>
 					</div>
-					<div style={{ float: "right" }}>
-						<IconLink href="https://twitter.com/npprmint">
+					<div className="iconlinks">
+						<IconLink href="https://twitter.com/npprmint" delay="0.22s">
 							<RiTwitterLine />
 						</IconLink>
-						<IconLink href="https://www.youtube.com/c/pprmint">
+						<IconLink href="https://www.youtube.com/c/pprmint" delay="0.26s">
 							<RiYoutubeLine />
 						</IconLink>
-						<IconLink href="https://www.behance.net/pprmint">
+						<IconLink href="https://www.behance.net/pprmint" delay="0.3s">
 							<RiBehanceLine />
 						</IconLink>
-						<IconLink href="https://github.com/pprmint">
+						<IconLink href="https://github.com/pprmint" delay="0.34s">
 							<RiGithubLine />
 						</IconLink>
 					</div>

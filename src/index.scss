@@ -26,9 +26,9 @@ html {
 	--boxInsetBody: -1.3rem;
 	--boxInsetH2: -2.65rem;
 	--boxInsetH3: -2rem;
-    /* Fonts */
-    --fontPrimary: "Silka", "Roboto", Helvetica, Arial, sans-serif;
-    --fontSecondary: "Basier Square", "Roboto", Helvetica, Arial, sans-serif;
+	/* Fonts */
+	--fontPrimary: "Silka", "Roboto", Helvetica, Arial, sans-serif;
+	--fontSecondary: "Basier Square", "Roboto", Helvetica, Arial, sans-serif;
 }
 
 /* Scrollbars */
@@ -56,21 +56,43 @@ html {
 }
 
 @keyframes fadeBottom {
-	from {
+	0% {
 		opacity: 0;
 		transform: translateY(20px);
 	}
-	to {
+	50% {
+		opacity: 1;
+	}
+	100% {
 		opacity: 1;
 		transform: translateY(0px);
 	}
+}
+
+footer {
+    padding: 0 30px;
+    .copyright {
+        animation: fadeBottom 0.375s var(--easeOut) .18s forwards;
+        opacity: 0;
+        float: left;
+        margin-top: 5px;
+    }
+    .iconlinks {
+        float: right;
+        .MuiIconButton-sizeLarge {
+            opacity: 0;
+            animation: fadeBottom 0.375s var(--easeOut) forwards;
+            color: var(--textPrimary);
+            margin: 0 0 15px 10px;
+        }
+    }
 }
 
 nav {
 	clear: right;
 }
 nav a {
-    font-family: var(--fontPrimary);
+	font-family: var(--fontPrimary);
 	display: block;
 	text-align: right;
 	font-weight: bold;
@@ -119,7 +141,7 @@ img {
 }
 .content {
 	opacity: 0;
-	animation: fadeBottom 0.375s var(--easeOut) 0.12s forwards;
+	animation: fadeBottom 0.375s var(--easeOut) 0.14s forwards;
 }
 
 /* General styles for links */
