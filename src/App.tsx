@@ -161,28 +161,28 @@ const Navigation = () => (
 			exact
 			activeClassName="active"
 			to="/"
-			style={{ animationDelay: "0.14s" }}
+			style={{ animationDelay: "0.04s" }}
 		>
 			Home
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/about"
-			style={{ animationDelay: "0.18s" }}
+			style={{ animationDelay: "0.08s" }}
 		>
 			About
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/projects"
-			style={{ animationDelay: "0.22s" }}
+			style={{ animationDelay: "0.12s" }}
 		>
 			Projects
 		</NavLink>
 		<NavLink
 			activeClassName="active"
 			to="/contact"
-			style={{ animationDelay: "0.26s" }}
+			style={{ animationDelay: "0.18s" }}
 		>
 			Contact & FAQ
 		</NavLink>
@@ -204,7 +204,7 @@ function App() {
 								style={{
 									float: "right",
 									animation:
-										"fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) 0.1s forwards",
+										"fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) forwards",
 									opacity: "0",
 								}}
 							>
@@ -290,16 +290,16 @@ function App() {
 						</Typography>
 					</div>
 					<div className="iconlinks">
-						<IconLink href="https://twitter.com/npprmint" delay="0.22s">
+						<IconLink href="https://twitter.com/npprmint" delay="0.12s">
 							<RiTwitterLine />
 						</IconLink>
-						<IconLink href="https://www.youtube.com/c/pprmint" delay="0.26s">
+						<IconLink href="https://www.youtube.com/c/pprmint" delay="0.16s">
 							<RiYoutubeLine />
 						</IconLink>
-						<IconLink href="https://www.behance.net/pprmint" delay="0.3s">
+						<IconLink href="https://www.behance.net/pprmint" delay="0.2s">
 							<RiBehanceLine />
 						</IconLink>
-						<IconLink href="https://github.com/pprmint" delay="0.34s">
+						<IconLink href="https://github.com/pprmint" delay="0.24s">
 							<RiGithubLine />
 						</IconLink>
 					</div>

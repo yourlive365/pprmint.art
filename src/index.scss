@@ -132,16 +132,16 @@ img {
 
 .title h1,
 .title .MuiCard-root {
-	animation: fadeBottom 0.375s var(--easeOut) 0.04s forwards;
+	animation: fadeBottom 0.375s var(--easeOut) forwards;
 	opacity: 0;
 }
 .title h2 {
-	animation: fadeBottom 0.375s var(--easeOut) 0.08s forwards;
+	animation: fadeBottom 0.375s var(--easeOut) 0.04s forwards;
 	opacity: 0;
 }
 .content {
 	opacity: 0;
-	animation: fadeBottom 0.375s var(--easeOut) 0.14s forwards;
+	animation: fadeBottom 0.375s var(--easeOut) 0.08s forwards;
 }
 
 /* General styles for links */
