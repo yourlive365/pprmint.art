@@ -14,14 +14,9 @@ import {
 	StyledEngineProvider,
 	CssBaseline,
 	Grid,
-	Container,
 	Typography,
 	IconButton,
 	Divider,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
 } from "@mui/material";
 
 // Imports of all the pages
@@ -49,22 +44,6 @@ import {
 	RiTwitterLine,
 	RiYoutubeLine,
 } from "react-icons/ri";
-
-function IconLink(
-	props: React.PropsWithChildren<{ href: string; delay: string }>
-) {
-	return (
-		<IconButton
-			href={props.href}
-			target="_blank"
-			rel="noopener noreferrer"
-			size="large"
-			style={{ animationDelay: props.delay }}
-		>
-			{props.children}
-		</IconButton>
-	);
-}
 
 const theme = createTheme({
 	palette: {
@@ -121,13 +100,16 @@ const theme = createTheme({
 			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
 			fontWeight: 600,
+			lineHeight: 1.1,
+			paddingBottom: "1rem",
 		},
 		h2: {
 			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
 			color: "#EEE",
-			fontSize: "2.1rem",
+			fontSize: "2rem",
 			fontWeight: 600,
 			padding: ".3rem 0",
+			lineHeight: 1.1,
 		},
 		h3: {
 			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
@@ -155,9 +137,36 @@ const theme = createTheme({
 	},
 });
 
+function IconLink(
+	props: React.PropsWithChildren<{ href: string; delay: string }>
+) {
+	return (
+		<IconButton
+			href={props.href}
+			target="_blank"
+			rel="noopener noreferrer"
+			size="large"
+			style={{ animationDelay: props.delay }}
+		>
+			{props.children}
+		</IconButton>
+	);
+}
+
 const Navigation = () => (
 	<nav>
+		<Link
+			to="/"
+			style={{
+				float: "right",
+				animation: "fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) forwards",
+				opacity: "0",
+			}}
+		>
+			<img src={Wordmark} height="35px" alt="pprmint." />
+		</Link>
 		<NavLink
+			className="navlink"
 			exact
 			activeClassName="active"
 			to="/"
@@ -166,6 +175,7 @@ const Navigation = () => (
 			Home
 		</NavLink>
 		<NavLink
+			className="navlink"
 			activeClassName="active"
 			to="/about"
 			style={{ animationDelay: "0.08s" }}
@@ -173,6 +183,7 @@ const Navigation = () => (
 			About
 		</NavLink>
 		<NavLink
+			className="navlink"
 			activeClassName="active"
 			to="/projects"
 			style={{ animationDelay: "0.12s" }}
@@ -180,6 +191,7 @@ const Navigation = () => (
 			Projects
 		</NavLink>
 		<NavLink
+			className="navlink"
 			activeClassName="active"
 			to="/contact"
 			style={{ animationDelay: "0.18s" }}
@@ -197,19 +209,11 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Router>
-					<Grid container style={{ minHeight: "calc(100vh - 212px)" }}>
+					<Grid
+						container
+						style={{ minHeight: "calc(100vh - (145px + 172px))" }}
+					>
 						<Grid item xs={12} lg={2.5} sx={{ padding: "15px 30px" }}>
-							<Link
-								to="/"
-								style={{
-									float: "right",
-									animation:
-										"fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) forwards",
-									opacity: "0",
-								}}
-							>
-								<img src={Wordmark} height="35px" alt="pprmint." />
-							</Link>
 							<Navigation />
 						</Grid>
 						<Grid item xs={12} lg={7} sx={{ padding: "0 30px" }}>
@@ -289,7 +293,7 @@ function App() {
 							</a>
 						</Typography>
 					</div>
-					<div className="iconlinks">
+					<div className="iconLinks">
 						<IconLink href="https://twitter.com/npprmint" delay="0.12s">
 							<RiTwitterLine />
 						</IconLink>

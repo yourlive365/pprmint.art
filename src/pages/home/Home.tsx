@@ -171,7 +171,6 @@ function Home() {
                     some rough edges here and there. If you notice any, please get
                     in touch with me."
 				/>
-				<br />
 			</div>
 		</>
 	);

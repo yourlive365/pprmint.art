@@ -69,79 +69,92 @@ html {
 	}
 }
 
-footer {
-    padding: 0 30px;
-    .copyright {
-        animation: fadeBottom 0.375s var(--easeOut) .18s forwards;
-        opacity: 0;
-        float: left;
-        margin-top: 5px;
-    }
-    .iconlinks {
-        float: right;
-        .MuiIconButton-sizeLarge {
-            opacity: 0;
-            animation: fadeBottom 0.375s var(--easeOut) forwards;
-            color: var(--textPrimary);
-            margin: 0 0 15px 10px;
-        }
-    }
-}
-
 nav {
-	clear: right;
-}
-nav a {
-	font-family: var(--fontPrimary);
-	display: block;
-	text-align: right;
-	font-weight: bold;
-	font-size: 1.5em;
-	animation: fadeBottom 0.375s var(--easeOut) forwards;
-	transition: all 0.2s var(--easeOut);
-	color: var(--textPrimary);
-	opacity: 0;
-	&::after {
-		content: "•";
+	hr {
+		animation: fadeBottom 0.375s var(--easeOut) forwards;
+		display: none;
 		opacity: 0;
+		@media only screen and (max-width: 1199px) {
+			display: block !important;
+		}
+	}
+	a.navlink {
+		font-family: var(--fontPrimary);
+		clear: right;
+		display: block;
+		text-align: right;
+		font-weight: 600;
+		font-size: 1.5em;
+		animation: fadeBottom 0.375s var(--easeOut) forwards;
 		transition: all 0.2s var(--easeOut);
-		margin: 0 -6px;
-	}
-	&:hover,
-	&:focus-visible {
-		color: var(--textSecondary);
-		letter-spacing: 0.75px;
-	}
-	&:active {
-		letter-spacing: 0;
-	}
-	&.active {
-		color: var(--textSecondary);
+		color: var(--textPrimary);
+		opacity: 0;
 		&::after {
-			color: var(--greenPrimary);
-			opacity: 1;
-			margin: 0 4px 0 8px;
+			content: "•";
+			opacity: 0;
+			transition: all 0.2s var(--easeOut);
+			margin: 0 -6px;
+		}
+		&:hover,
+		&:focus-visible {
+			color: var(--textSecondary);
+			letter-spacing: 0.75px;
+		}
+		&:active {
+			letter-spacing: 0;
+		}
+		&.active {
+			color: var(--textSecondary);
+			&::after {
+				color: var(--greenPrimary);
+				opacity: 1;
+				margin: 0 4px 0 8px;
+			}
 		}
 	}
 }
 
-img {
-	-webkit-user-drag: none;
-	user-select: none;
-}
-
-.title h1,
-.title .MuiCard-root {
-	animation: fadeBottom 0.375s var(--easeOut) forwards;
-	opacity: 0;
-}
-.title h2 {
-	animation: fadeBottom 0.375s var(--easeOut) 0.04s forwards;
-	opacity: 0;
-}
 .content {
 	opacity: 0;
 	animation: fadeBottom 0.375s var(--easeOut) 0.08s forwards;
+}
+
+footer {
+	padding: 40px 0 30px 0;
+	text-align: center;
+	.copyright {
+		animation: fadeBottom 0.375s var(--easeOut) 0.18s forwards;
+		opacity: 0;
+	}
+	.iconLinks {
+		.MuiIconButton-sizeLarge {
+			opacity: 0;
+			animation: fadeBottom 0.375s var(--easeOut) forwards;
+			color: var(--textSecondary);
+			margin: 5px;
+		}
+	}
+}
+
+.title {
+	margin-bottom: 20px;
+	@media only screen and (max-width: 1199px) {
+		h1 {
+			font-size: 4rem !important;
+		}
+		h2 {
+			font-size: 2rem !important;
+		}
+	}
+	h1,
+	.MuiCard-root {
+		animation: fadeBottom 0.375s var(--easeOut) forwards;
+		opacity: 0;
+	}
+	h2 {
+		animation: fadeBottom 0.375s var(--easeOut) 0.04s forwards;
+		opacity: 0;
+	}
 }
 
 /* General styles for links */
@@ -219,15 +232,16 @@ h3 a.external:hover {
 	box-shadow: inset 0 var(--boxInsetH3) 0 var(--bluePrimary);
 }
 
+img {
+	-webkit-user-drag: none;
+	user-select: none;
+}
+
 .MuiListItemIcon-root {
 	font-size: 20px;
 }
 .MuiListItemText-root {
 	color: var(--textPrimary);
-}
-
-.content {
-	padding: 25px 0 50px 0;
 }
 
 .MuiCircularProgress-root {
@@ -243,23 +257,10 @@ h3 a.external:hover {
 }
 .MuiAccordionSummary-root {
 	padding: 4px 24px;
+    h3 {
+        padding: 0 !important;
+    }
 }
 .MuiAccordionDetails-root {
 	padding: 8px 24px 24px;
-}
-
-/* Show a little divider line when nav is put on top of main content */
-nav hr {
-	display: none;
-}
-@media only screen and (max-width: 1199px) {
-	nav hr {
-		display: block;
-	}
-}
-
-@media only screen and (max-width: 599px) {
-	h1 {
-		font-size: 4.25rem !important;
-	}
 }
