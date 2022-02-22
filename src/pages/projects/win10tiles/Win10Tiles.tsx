@@ -8,6 +8,7 @@ import {
 	Card,
 	CardContent,
 	CardActions,
+	Skeleton,
 } from "@mui/material";
 import Image from "material-ui-image";
 
@@ -49,17 +50,40 @@ import Vmware from "./assets/Vmware.png";
 import WhatsApp from "./assets/WhatsApp.png";
 import Word from "./assets/Word.png";
 
-interface TileImageProps {
-	image: string;
-}
-
-function TileImage(props: TileImageProps) {
-	return (
-		<Grid item xs={4} sm={2}>
-			<Image src={props.image} width="100%" color="#222222" alt="" />
-		</Grid>
-	);
-}
+const tiles = [
+	{ src: Audition },
+	{ src: MediaEncoder },
+	{ src: Premiere },
+	{ src: Designer },
+	{ src: Photo },
+	{ src: Publisher },
+	{ src: Aseprite },
+	{ src: Blender },
+	{ src: Bundled },
+	{ src: Cinema4D },
+	{ src: Code },
+	{ src: Discord },
+	{ src: Dolphin },
+	{ src: FlStudio },
+	{ src: Live },
+	{ src: Word },
+	{ src: Excel },
+	{ src: PowerPoint },
+	{ src: MinecraftJava },
+	{ src: MinecraftBedrock },
+	{ src: Netflix },
+	{ src: Obs },
+	{ src: Osu },
+	{ src: Pcsx2 },
+	{ src: PrimeVideo },
+	{ src: ProtonMail },
+	{ src: Spotify },
+	{ src: Steam },
+	{ src: Telegram },
+	{ src: Vmware },
+	{ src: WhatsApp },
+	{ src: QBittorrent },
+];
 
 function Win10TilesDL() {
 	return (
@@ -85,39 +109,24 @@ function Win10TilesDL() {
 			</div>
 			<div className="content">
 				<Grid container spacing={1}>
-					<TileImage image={AfterEffects} />
-					<TileImage image={Audition} />
-					<TileImage image={MediaEncoder} />
-					<TileImage image={Premiere} />
-					<TileImage image={Designer} />
-					<TileImage image={Photo} />
-					<TileImage image={Publisher} />
-					<TileImage image={Aseprite} />
-					<TileImage image={Blender} />
-					<TileImage image={Bundled} />
-					<TileImage image={Cinema4D} />
-					<TileImage image={Code} />
-					<TileImage image={Discord} />
-					<TileImage image={Dolphin} />
-					<TileImage image={FlStudio} />
-					<TileImage image={Live} />
-					<TileImage image={Word} />
-					<TileImage image={Excel} />
-					<TileImage image={PowerPoint} />
-					<TileImage image={MinecraftJava} />
-					<TileImage image={MinecraftBedrock} />
-					<TileImage image={Netflix} />
-					<TileImage image={Obs} />
-					<TileImage image={Osu} />
-					<TileImage image={Pcsx2} />
-					<TileImage image={PrimeVideo} />
-					<TileImage image={ProtonMail} />
-					<TileImage image={Spotify} />
-					<TileImage image={Steam} />
-					<TileImage image={Telegram} />
-					<TileImage image={Vmware} />
-					<TileImage image={WhatsApp} />
-					<TileImage image={QBittorrent} />
+					{tiles.map((item) => (
+						<Grid item xs={4} sm={2}>
+							<Image
+								src={item.src}
+								width="100%"
+								color="#222222"
+								alt=""
+								loading={
+									<Skeleton
+										variant="rectangular"
+										animation="wave"
+										width="100%"
+										height="100%"
+									/>
+								}
+							/>
+						</Grid>
+					))}
 				</Grid>
 				<br />
 				<Card variant="outlined">
@@ -156,7 +165,6 @@ function Win10TilesDL() {
 						</Button>
 					</CardActions>
 				</Card>
-				<br />
 			</div>
 		</>
 	);

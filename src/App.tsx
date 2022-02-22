@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -17,6 +18,15 @@ import {
 	Typography,
 	IconButton,
 	Divider,
+	Container,
+	AppBar,
+	Toolbar,
+	Box,
+	SwipeableDrawer,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
 } from "@mui/material";
 
 // Imports of all the pages
@@ -32,6 +42,8 @@ import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/404/Error404";
 import UnderConstruction from "./pages/wip/UnderConstruction";
 
+import ScrollToTop from "./ScrollToTop";
+
 import Wordmark from "./globalassets/wordmark.svg";
 
 /* import "./globalassets/fonts/archia.css"; */
@@ -41,9 +53,35 @@ import "./globalassets/fonts/basier_square.css";
 import {
 	RiBehanceLine,
 	RiGithubLine,
+	RiMenu2Line,
+	RiMenu3Line,
 	RiTwitterLine,
 	RiYoutubeLine,
 } from "react-icons/ri";
+
+const nav = [
+	{
+		text: "Home",
+		link: "/",
+		exact: true,
+		delay: "0.04",
+	},
+	{
+		text: "About",
+		link: "/about",
+		delay: "0.08",
+	},
+	{
+		text: "Projects",
+		link: "/projects",
+		delay: "0.12",
+	},
+	{
+		text: "Contact & FAQ",
+		link: "/contact",
+		delay: "0.18",
+	},
+];
 
 const theme = createTheme({
 	palette: {
@@ -97,25 +135,25 @@ const theme = createTheme({
 		fontFamily:
 			'"Basier Square", "Silka", "Roboto", Helvetica, Arial, sans-serif',
 		h1: {
-			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: "var(--fontPrimary)",
 			color: "#EEE",
 			fontWeight: 600,
 			lineHeight: 1.1,
 			paddingBottom: "1rem",
 		},
 		h2: {
-			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: "var(--fontPrimary)",
 			color: "#EEE",
 			fontSize: "2rem",
-			fontWeight: 600,
+			fontWeight: 500,
 			padding: ".3rem 0",
 			lineHeight: 1.1,
 		},
 		h3: {
-			fontFamily: '"Silka", "Roboto", Helvetica, Arial, sans-serif',
+			fontFamily: "var(--fontPrimary)",
 			color: "#EEE",
 			fontSize: "1.5rem",
-			fontWeight: 600,
+			fontWeight: 400,
 			padding: ".3rem 0",
 		},
 		body1: {
@@ -124,7 +162,7 @@ const theme = createTheme({
 		},
 	},
 	shape: {
-		borderRadius: 4,
+		borderRadius: 6,
 	},
 	components: {
 		MuiSkeleton: {
@@ -153,55 +191,117 @@ function IconLink(
 	);
 }
 
-const Navigation = () => (
-	<nav>
-		<Link
-			to="/"
-			style={{
-				float: "right",
-				animation: "fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) forwards",
-				opacity: "0",
-			}}
+function DesktopNavigation() {
+	return (
+		<nav>
+			<Link
+				to="/"
+				style={{
+					float: "right",
+					animation: "fadeBottom 0.4s cubic-bezier(0, 0.7, 0.5, 1) forwards",
+					opacity: "0",
+				}}
+			>
+				<img src={Wordmark} height="35px" alt="pprmint." />
+			</Link>
+			{nav.map((item) => {
+				const exact = item.exact ? true : false;
+				return (
+					<NavLink
+						className="navlink"
+						exact={item.exact}
+						activeClassName="active"
+						to={item.link}
+						style={{ animationDelay: "0.04s" }}
+					>
+						{item.text}
+					</NavLink>
+				);
+			})}
+		</nav>
+	);
+}
+function MobileNavigation() {
+	const [open, setOpen] = useState<boolean>(false);
+	return (
+		<AppBar
+			elevation={2}
+			position="fixed"
+			sx={{ display: { xs: "block", lg: "none" } }}
 		>
-			<img src={Wordmark} height="35px" alt="pprmint." />
-		</Link>
-		<NavLink
-			className="navlink"
-			exact
-			activeClassName="active"
-			to="/"
-			style={{ animationDelay: "0.04s" }}
-		>
-			Home
-		</NavLink>
-		<NavLink
-			className="navlink"
-			activeClassName="active"
-			to="/about"
-			style={{ animationDelay: "0.08s" }}
-		>
-			About
-		</NavLink>
-		<NavLink
-			className="navlink"
-			activeClassName="active"
-			to="/projects"
-			style={{ animationDelay: "0.12s" }}
-		>
-			Projects
-		</NavLink>
-		<NavLink
-			className="navlink"
-			activeClassName="active"
-			to="/contact"
-			style={{ animationDelay: "0.18s" }}
-		>
-			Contact & FAQ
-		</NavLink>
-		<br />
-		<Divider />
-	</nav>
-);
+			<Toolbar>
+				<IconButton
+					size="large"
+					edge="start"
+					color="inherit"
+					aria-label="menu"
+					onClick={() => setOpen(true)}
+					sx={{ mr: 2 }}
+				>
+					<RiMenu2Line />
+				</IconButton>
+				<SwipeableDrawer
+					sx={{
+						width: "281px",
+						flexShrink: 0,
+						[`& .MuiDrawer-paper`]: {
+							width: "281px",
+							boxSizing: "border-box",
+						},
+					}}
+					anchor="left"
+					elevation={2}
+					open={open}
+					onClose={() => setOpen(false)}
+					onOpen={() => {}}
+				>
+					<Box
+						pl={{ xs: 2, sm: 3 }}
+						pt={{ xs: 0, sm: 1 }}
+						pb={{ xs: 0, sm: 1 }}
+					>
+						<IconButton
+							size="large"
+							edge="start"
+							color="inherit"
+							aria-label="menu"
+							onClick={() => setOpen(false)}
+							sx={{ mr: 2 }}
+						>
+							<RiMenu3Line />
+						</IconButton>
+					</Box>
+					<List>
+						{nav.map((item) => {
+							const exact = item.exact ? true : false;
+							return (
+								<NavLink
+									onClick={() => setOpen(false)}
+									
+									exact={item.exact}
+									activeClassName="active"
+									to={item.link}
+								>
+									<ListItem button>
+										<ListItemText primary={item.text} className="navlink" />
+									</ListItem>
+								</NavLink>
+							);
+						})}
+					</List>
+				</SwipeableDrawer>
+				<Link
+					to="/"
+					style={{
+						marginTop: "9px",
+					}}
+				>
+					<img src={Wordmark} height="30px" alt="pprmint." />
+				</Link>
+			</Toolbar>
+		</AppBar>
+	);
+}
 
 function App() {
 	return (
@@ -209,72 +309,76 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Router>
-					<Grid
-						container
-						style={{ minHeight: "calc(100vh - (145px + 172px))" }}
-					>
-						<Grid item xs={12} lg={2.5} sx={{ padding: "15px 30px" }}>
-							<Navigation />
+					<MobileNavigation />
+					<Grid container spacing={8} id="main">
+						<Grid item xs={12} lg={2.5}>
+							<Box sx={{ display: { xs: "none", lg: "block" } }}>
+								<DesktopNavigation />
+							</Box>
 						</Grid>
-						<Grid item xs={12} lg={7} sx={{ padding: "0 30px" }}>
-							{/* All the different pages that exist here, pretty much. */}
-							<Switch>
-								<Route path={"/"} exact>
-									<Home />
-								</Route>
-								<Route path={"/about"} exact>
-									{/* <About /> */}
-									<UnderConstruction />
-								</Route>
-								<Route path={"/projects"} exact>
-									<Projects />
-								</Route>
-								<Route path={"/projects/mintsans"} exact>
-									<MintsansDL />
-								</Route>
-								{/* <Route path={"/projects/mintbit"} exact>
+						<ScrollToTop>
+							<Grid item md={12} xl={7} lg={9}>
+								<Container maxWidth={false}>
+									{/* All the different pages that exist here, pretty much. */}
+									<Switch>
+										<Route path={"/"} exact>
+											<Home />
+										</Route>
+										<Route path={"/about"} exact>
+											{/* <About /> */}
+											<UnderConstruction />
+										</Route>
+										<Route path={"/projects"} exact>
+											<Projects />
+										</Route>
+										<Route path={"/projects/mintsans"} exact>
+											<MintsansDL />
+										</Route>
+										{/* <Route path={"/projects/mintbit"} exact>
 									<MintBitDL />
-								</Route>
-								<Route path={"/projects/mintalt"} exact>
+                                    </Route>
+                                    <Route path={"/projects/mintalt"} exact>
 									<MintAltDL />
 								</Route> */}
-								<Route path={"/projects/mintcraft"} exact>
-									<MintcraftDL />
-								</Route>
-								<Route path={"/projects/win10tiles"} exact>
-									<Win10TilesDL />
-								</Route>
-								<Route path={"/contact"} exact>
-									<Contact />
-								</Route>
+										<Route path={"/projects/mintcraft"} exact>
+											<MintcraftDL />
+										</Route>
+										<Route path={"/projects/win10tiles"} exact>
+											<Win10TilesDL />
+										</Route>
+										<Route path={"/contact"} exact>
+											<Contact />
+										</Route>
 
-								<Route path={"/works"} exact>
-									<Redirect to="/projects" />
-								</Route>
-								<Route path={"/downloads"} exact>
-									<Redirect to="/projects" />
-								</Route>
-								<Route path={"/faq"} exact>
-									<Redirect to="/contact" />
-								</Route>
-								<Route path={"/mintcraft"} exact>
-									<Redirect to="/projects/mintcraft" />
-								</Route>
-								<Route path={"/mintsans"} exact>
-									<Redirect to="/projects/mintsans" />
-								</Route>
-								<Route path={"/mintalt"} exact>
-									<Redirect to="/projects/mintalt" />
-								</Route>
-								<Route path={"/win10tiles"} exact>
-									<Redirect to="/projects/win10tiles" />
-								</Route>
+										<Route path={"/works"} exact>
+											<Redirect to="/projects" />
+										</Route>
+										<Route path={"/downloads"} exact>
+											<Redirect to="/projects" />
+										</Route>
+										<Route path={"/faq"} exact>
+											<Redirect to="/contact" />
+										</Route>
+										<Route path={"/mintcraft"} exact>
+											<Redirect to="/projects/mintcraft" />
+										</Route>
+										<Route path={"/mintsans"} exact>
+											<Redirect to="/projects/mintsans" />
+										</Route>
+										<Route path={"/mintalt"} exact>
+											<Redirect to="/projects/mintalt" />
+										</Route>
+										<Route path={"/win10tiles"} exact>
+											<Redirect to="/projects/win10tiles" />
+										</Route>
 
-								<Route component={Error404}>
-									<Error404 />
-								</Route>
-							</Switch>
-						</Grid>
+										<Route component={Error404}>
+											<Error404 />
+										</Route>
+									</Switch>
+								</Container>
+							</Grid>
+						</ScrollToTop>
 					</Grid>
 				</Router>
 				<footer>

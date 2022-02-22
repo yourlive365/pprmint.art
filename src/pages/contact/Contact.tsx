@@ -30,25 +30,6 @@ import {
 	RiNumber3,
 } from "react-icons/ri";
 
-function createData(
-	name: string,
-	personal: string,
-	commercial: string,
-	modify: string,
-	sell: string,
-	note: number
-) {
-	return { name, personal, commercial, modify, sell, note };
-}
-
-const rows = [
-	createData("Motion graphics and other videos", "✕", "✕", "✕", "✕", 1),
-	createData("Illustrations and other static images", "✕", "✕", "✕", "✕", 1),
-	createData("Desktop and phone wallpapers", "✓", "✕", "✓", "✕", 2),
-	createData("Other projects", "✓", "✕", "✓", "✕", 2),
-	createData("Fonts", "✓", "✓", "✓", "✕", 3),
-];
-
 function Contact() {
 	return (
 		<>
@@ -89,101 +70,63 @@ function Contact() {
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails>
-							<Alert color="info" variant="filled" icon={<RiInformationLine />}>
-								If these terms are unclear to you in any way, don't hesitate to
-								get in touch with me.
-							</Alert>
 							<Typography variant="body1">
+								<b>
+									Generally, you are not allowed to re-use, sell or otherwise
+									redistribute my works in any way unless stated otherwise.{" "}
+								</b>
+								There are some exceptions to this as mentioned below. If you're
+								ever not sure about what you may do with a thing I made, please
+								don't hesitate to get in touch with me and ask me.
+							</Typography>
+							<br />
+							<Typography variant="body1">
+								<b>Animations, illustrations and other works</b>
 								<br />
-								<Card variant="outlined">
-									<TableContainer>
-										<Table>
-											<TableHead sx={{ backgroundColor: "#333" }}>
-												<TableRow>
-													<TableCell>Thingy</TableCell>
-													<TableCell align="right">Personal use</TableCell>
-													<TableCell align="right">Commercial use</TableCell>
-													<TableCell align="right">Modify</TableCell>
-													<TableCell align="right">Sell</TableCell>
-													<TableCell align="right">Details</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{rows.map((row) => (
-													<TableRow
-														key={row.name}
-														sx={{
-															"&:last-child td, &:last-child th": { border: 0 },
-															"&:nth-of-type(odd)": {
-																backgroundColor: "#111",
-															},
-														}}
-													>
-														<TableCell component="th" scope="row">
-															{row.name}
-														</TableCell>
-														<TableCell align="right">{row.personal}</TableCell>
-														<TableCell align="right">
-															{row.commercial}
-														</TableCell>
-														<TableCell align="right">{row.modify}</TableCell>
-														<TableCell align="right">{row.sell}</TableCell>
-														<TableCell align="right">{row.note}</TableCell>
-													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								</Card>
+								For these kinds of works, I'd rather you simply focus your
+								senses on them and just look at them. Think of my website and
+								YouTube channel as my little art gallery where you can have a
+								look at my works. No buy, no rent, no nothing. Only look.
+							</Typography>
+							<br />
+							<Typography variant="body1">
+								<b>Desktop and phone wallpapers and other projects</b>
+								<br />I encourage you to download and use projects like{" "}
+								<Link to="/projects/mintcraft">Mintcraft</Link> and my{" "}
+								<Link to="/projects/win10tiles">Windows 10 tiles</Link> as well
+								as my occasional desktop backgrounds for yourself. You are also
+								free to make your own changes and share them <i>privately</i>{" "}
+								with your friends.
 								<br />
-								<List>
-									<ListItem>
-										<ListItemIcon>
-											<RiNumber1 />
-										</ListItemIcon>
-										<ListItemText>
-											For these kinds of works, I'd rather you simply focus your
-											senses on them and just look at them. Think of my website
-											and YouTube channel as my little art gallery where you can
-											have a look at my works. No buy, no rent, no nothing. Only
-											look.
-										</ListItemText>
-									</ListItem>
-									<ListItem>
-										<ListItemIcon>
-											<RiNumber2 />
-										</ListItemIcon>
-										<ListItemText>
-											Contrary to how it is the case with most of my
-											illustrations and animations, I actually encourage you to
-											download and use projects like{" "}
-											<Link to="/projects/mintcraft">Mintcraft</Link> and my{" "}
-											<Link to="/projects/win10tiles">Windows 10 tiles</Link> as
-											well as my occasional desktop backgrounds for yourself.
-											You are also free to make your own changes and share them{" "}
-											<i>privately</i> with your friends.
-										</ListItemText>
-									</ListItem>
-									<ListItem>
-										<ListItemIcon>
-											<RiNumber3 />
-										</ListItemIcon>
-										<ListItemText>
-											My fonts are licensed under the{" "}
-											<a
-												className="external"
-												href="https://scripts.sil.org/cms/scripts/page.php?item_id=OFL"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												SIL Open Font License
-											</a>
-											. This means that you may freely use the fonts for
-											personal and commercial projects. However, you may not
-											sell the fonts and/or derivatives thereof.
-										</ListItemText>
-									</ListItem>
-								</List>
+								Generally, if it has its own download button, you can go and use
+								it for whatever you'd like.
+								<br />
+								<br />
+								<b>Fonts</b>
+								<br />
+								My fonts are licensed under the{" "}
+								<a
+									className="external"
+									href="https://scripts.sil.org/cms/scripts/page.php?item_id=OFL"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									SIL Open Font License
+								</a>
+								. This means that you may freely use the fonts for personal and
+								commercial projects. However, you may not sell the fonts and/or
+								derivatives thereof.
+								<b></b>
+								<br />
+								<br />
+								<Alert
+									color="info"
+									variant="filled"
+									icon={<RiInformationLine />}
+								>
+									If these terms are unclear to you in any way, don't hesitate
+									to get in touch with me.
+								</Alert>
 							</Typography>
 						</AccordionDetails>
 					</Accordion>

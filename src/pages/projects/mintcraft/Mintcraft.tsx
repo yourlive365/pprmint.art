@@ -347,7 +347,6 @@ function MintcraftDL() {
 						</Card>
 					</Grid>
 				</Grid>
-				<br />
 			</div>
 		</>
 	);

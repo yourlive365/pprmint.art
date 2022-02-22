@@ -1,9 +1,13 @@
 html {
 	width: 100vw;
 	overflow-x: hidden;
-	margin-top: 145px;
 }
-
+#root {
+	margin-top: var(--marginTop);
+}
+#main {
+	min-height: calc(100vh - (108px + var(--marginTop)));
+}
 :root {
 	/* Main color palette */
 	--greenPrimary: #0c6;
@@ -29,6 +33,11 @@ html {
 	/* Fonts */
 	--fontPrimary: "Silka", "Roboto", Helvetica, Arial, sans-serif;
 	--fontSecondary: "Basier Square", "Roboto", Helvetica, Arial, sans-serif;
+	/* Top margin */
+	--marginTop: 145px;
+	@media only screen and (max-width: 1199px) {
+		--marginTop: 25px;
+	}
 }
 
 /* Scrollbars */
@@ -68,22 +77,30 @@ html {
 		transform: translateY(0px);
 	}
 }
+@keyframes fadeTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
 
 nav {
-	hr {
-		animation: fadeBottom 0.375s var(--easeOut) forwards;
-		display: none;
-		opacity: 0;
-		@media only screen and (max-width: 1199px) {
-			display: block !important;
-		}
-	}
+	font-family: var(--fontPrimary);
+	font-weight: 600;
+	width: 20%;
+	padding-top: 15px;
+	position: fixed;
 	a.navlink {
-		font-family: var(--fontPrimary);
 		clear: right;
 		display: block;
 		text-align: right;
-		font-weight: 600;
 		font-size: 1.5em;
 		animation: fadeBottom 0.375s var(--easeOut) forwards;
 		transition: all 0.2s var(--easeOut);
@@ -112,6 +129,10 @@ nav {
 			}
 		}
 	}
+}
+.MuiAppBar-root {
+	opacity: 0;
+	animation: fadeTop 0.375s var(--easeOut) forwards;
 }
 
 .content {
@@ -214,7 +235,7 @@ a.external::after {
 	position: relative;
 	top: 0.2rem;
 	left: 0.2rem;
-	margin-right: 0.2rem;
+	margin-right: 0.3rem;
 }
 a.external:hover::after {
 	color: var(--backgroundPrimary);
@@ -257,9 +278,9 @@ img {
 }
 .MuiAccordionSummary-root {
 	padding: 4px 24px;
-    h3 {
-        padding: 0 !important;
-    }
+	h3 {
+		padding: 0 !important;
+	}
 }
 .MuiAccordionDetails-root {
 	padding: 8px 24px 24px;

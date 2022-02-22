@@ -112,7 +112,6 @@ function MintsansDL() {
 						</Button>
 					</CardActions>
 				</Card>
-				<br />
 			</div>
 		</>
 	);
