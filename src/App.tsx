@@ -33,11 +33,18 @@ import {
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
+
 import MintsansDL from "./pages/projects/mintsans/Mintsans";
 import MintBitDL from "./pages/projects/mintbit/MintBit";
 import MintAltDL from "./pages/projects/mintalternative/MintAlt";
 import MintcraftDL from "./pages/projects/mintcraft/Mintcraft";
 import Win10TilesDL from "./pages/projects/win10tiles/Win10Tiles";
+
+// Works under /projects
+import Ipad from "./pages/projects/gallery/2022/ipad/iPad"; // this hurts
+import ArchWall from "./pages/projects/gallery/2022/archwall/ArchWall";
+import Ford from "./pages/projects/gallery/2022/ford/Ford";
+
 import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/404/Error404";
 import UnderConstruction from "./pages/wip/UnderConstruction";
@@ -277,7 +284,6 @@ function MobileNavigation() {
 							return (
 								<NavLink
 									onClick={() => setOpen(false)}
-									
 									exact={item.exact}
 									activeClassName="active"
 									to={item.link}
@@ -346,6 +352,17 @@ function App() {
 										<Route path={"/projects/win10tiles"} exact>
 											<Win10TilesDL />
 										</Route>
+
+										<Route path={"/projects/works/2022/ipad"} exact>
+											<Ipad />
+										</Route>
+										<Route path={"/projects/works/2022/ford"} exact>
+											<Ford />
+										</Route>
+										<Route path={"/projects/works/2022/archwall"} exact>
+											<ArchWall />
+										</Route>
+
 										<Route path={"/contact"} exact>
 											<Contact />
 										</Route>

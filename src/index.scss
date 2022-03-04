@@ -198,13 +198,13 @@ h2 a,
 h3 a {
 	transition: all 0.15s;
 	box-shadow: inset 0 -1px 0 #ffffff55;
-	margin: 0 0.3rem;
+	margin: 0 0.35rem;
 	padding: 0;
 	&:hover {
 		color: var(--backgroundPrimary);
 		border-radius: 4px;
 		margin: 0;
-		padding: 0 0.3rem;
+		padding: 0 0.35rem;
 	}
 }
 /* Specific inset positions for each text size needed */
@@ -220,11 +220,11 @@ h3 a:hover {
 /* Special underline for external links */
 p a.external {
 	position: relative;
-	margin: 0 0.5rem 0 0.3rem;
+	margin: 0 0.4rem 0 0.3rem;
 	padding: 0;
 	&:hover {
 		margin: 0;
-		padding: 0 0.5rem 0 0.3rem;
+		padding: 0 0.4rem 0 0.3rem;
 	}
 }
 /* That arrow */
