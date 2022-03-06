@@ -354,7 +354,7 @@ function App() {
 										</Route>
 
 										<Route path={"/projects/works/2022/ipad"} exact>
-											<Ipad />
+											<Ipad /> {/* AAAAAAAAAA */}
 										</Route>
 										<Route path={"/projects/works/2022/ford"} exact>
 											<Ford />
@@ -403,15 +403,7 @@ function App() {
 						<Typography variant="body2">
 							2022, pprmint.
 							<br />
-							Made with coffee and hosted on{" "}
-							<a
-								className="external"
-								href="https://firebase.google.com/support/privacy/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Firebase
-							</a>
+							Made with  coffee and hosted on{" "}
 						</Typography>
 					</div>
 					<div className="iconLinks">
