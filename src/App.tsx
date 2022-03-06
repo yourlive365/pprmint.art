@@ -60,6 +60,7 @@ import "./globalassets/fonts/basier_square.css";
 import {
 	RiBehanceLine,
 	RiGithubLine,
+	RiHeartFill,
 	RiMenu2Line,
 	RiMenu3Line,
 	RiTwitterLine,
@@ -401,9 +402,8 @@ function App() {
 				<footer>
 					<div className="copyright">
 						<Typography variant="body2">
-							2022, pprmint.
-							<br />
-							Made with  coffee and hosted on{" "}
+							Made with <RiHeartFill color="var(--redSecondary)"/> and coffee by
+							pprmint.
 						</Typography>
 					</div>
 					<div className="iconLinks">

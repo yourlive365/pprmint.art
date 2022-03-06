@@ -103,6 +103,17 @@ function Home() {
 					content="I make things look neat with vector points, keyframes, and colorful
 					monospace letters. Have a look at my works or download things you may use for your own intents and purposes."
 				/>
+                
+				<meta name="theme-color" content="#00cc66" />
+				<meta property="og:image" content="http://pprmint.art/og.jpg?v=2022" />
+				<meta property="og:image:width" content="1600" />
+				<meta property="og:image:height" content="838" />
+				<meta property="og:title" content="pprmint.art" />
+				<meta
+					property="og:description"
+					content="I make things look neat with vector points, keyframes, and colorful monospace letters."
+				/>
+				<meta property="og:url" content="https://pprmint.art" />
 			</Helmet>
 			<div className="title">
 				<Typography variant="h1">Good today.</Typography>
